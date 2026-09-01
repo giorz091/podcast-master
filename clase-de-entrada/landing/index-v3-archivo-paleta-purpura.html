@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanza tu Podcast — Cómo hacer tus primeros 10 episodios</title>
+<meta name="description" content="Clase en vivo de 3 horas, miércoles 7:00 PM (CDMX). Sal con el nombre de tu podcast, tus 10 primeros episodios planeados y sabiendo grabar, editar y publicar. Con el teléfono que ya tienes. 27 USD.">
+<meta property="og:title" content="Lanza tu Podcast — Cómo hacer tus primeros 10 episodios">
+<meta property="og:description" content="Clase en vivo. Sal con tu podcast planeado y sabiendo grabarlo. Con el teléfono que ya tienes.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#06050D">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ░░░ [ ] OG:IMAGE — falta la imagen social (1200×675). Añádela y descomenta:
+<meta property="og:image" content="img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306050D'/%3E%3Crect x='12' y='6' width='8' height='13' rx='4' fill='%23C77DFF'/%3E%3Cpath d='M9 15a7 7 0 0 0 14 0' stroke='%23FF7A18' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M16 22v4' stroke='%23FF7A18' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   LANZA TU PODCAST — landing v2 · clase de entrada · 27 USD
+   Sinergéticos · 2026-08-28
+   Estructura: página de registro de low ticket (orden calcado de
+   la referencia que pidió Gio). Sin máquina de escribir.
+   Paleta de la casa: púrpura + negro + blanco, naranja de empuje.
+   ========================================================== */
+
+:root{
+  --bg:#06050D; --bg-2:#0B0916; --panel:#120F21;
+  --line:rgba(168,85,247,.16); --line-2:rgba(168,85,247,.34);
+  --txt:#F4F1FF; --txt-2:#A79FC4; --txt-3:#8B83A8;
+  --pu:#A855F7; --pu-2:#C77DFF; --pu-3:#7C3AED;
+  --or:#FF7A18; --or-2:#FFB020; --ok:#34D399; --no:#FF5078;
+  --max:1180px; --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--txt);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.narrow{max-width:760px;margin:0 auto}
+section{padding:58px 0;position:relative}
+@media(max-width:720px){section{padding:40px 0}}
+.center{text-align:center}
+h1,h2,h3{margin:0 0 .4em;line-height:1.08;letter-spacing:-.035em;font-weight:800}
+h1{font-size:clamp(2rem,5.2vw,3.5rem);font-weight:900;letter-spacing:-.045em;line-height:1.04}
+h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+h3{font-size:1.15rem;letter-spacing:-.02em;font-weight:700}
+p{margin:0 0 1.1em}
+.lead{font-size:clamp(1.02rem,1.7vw,1.18rem);color:var(--txt-2);line-height:1.62}
+strong{color:#fff;font-weight:700}
+.note{font-size:.86rem;color:var(--txt-3);margin:14px 0 0}
+.hl{background:linear-gradient(100deg,var(--pu-2) 0%,var(--pu) 40%,var(--or-2) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* malla de fondo */
+.grid-bg{position:relative;isolation:isolate}
+.grid-bg > *{position:relative;z-index:1}
+.grid-bg::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(168,85,247,.14) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(168,85,247,.14) 1px,transparent 1px),
+    linear-gradient(rgba(168,85,247,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(168,85,247,.06) 1px,transparent 1px);
+  background-size:288px 288px,288px 288px,72px 72px,72px 72px;background-position:center top;
+  mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%);
+}
+
+/* huecos pendientes */
+.hueco{border:1px dashed rgba(255,176,32,.5);border-radius:12px;background:rgba(255,176,32,.05);
+  color:var(--or-2);padding:12px 16px;font-size:.85rem;font-weight:600;line-height:1.5}
+.pending{border-style:dashed;border-color:rgba(255,176,32,.35)}
+.pending blockquote,.pending .a{color:var(--txt-3);font-style:italic}
+.aviso{display:inline-block;font-family:'Space Grotesk',monospace;font-size:.62rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--or-2);
+  border:1px solid rgba(255,176,32,.4);background:rgba(255,176,32,.08);
+  padding:3px 9px;border-radius:100px;margin-bottom:10px}
+
+/* botones */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;text-align:center;
+  background:linear-gradient(100deg,var(--or) 0%,#FF9A3C 55%,var(--or-2) 100%);
+  color:#1A0B00;font-weight:900;font-size:clamp(.95rem,1.6vw,1.08rem);letter-spacing:-.01em;
+  padding:19px 34px;border-radius:100px;text-decoration:none;border:0;cursor:pointer;
+  box-shadow:0 12px 40px rgba(255,122,24,.34);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 20px 56px rgba(255,122,24,.48)}
+.btn.full{width:100%;max-width:520px}
+.cta-sub{font-size:.82rem;color:var(--txt-3);margin:12px 0 0}
+
+/* ═════════ BARRA SUPERIOR ═════════ */
+.top{border-bottom:1px solid var(--line);background:rgba(6,5,13,.9);position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(10px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.lock b{font-family:'Space Grotesk',monospace;font-size:1.02rem;font-weight:700;letter-spacing:-.03em;color:#fff;display:block;line-height:1.1}
+.lock span{font-family:'Space Grotesk',monospace;font-size:.58rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--pu-2)}
+.top-tag{font-family:'Space Grotesk',monospace;font-size:.66rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--txt-3);border:1px solid var(--line-2);padding:6px 12px;border-radius:100px}
+
+/* ═════════ HERO ═════════ */
+.hero{
+  padding:52px 0 58px;overflow:hidden;
+  background:
+    radial-gradient(1000px 620px at 50% -10%,rgba(124,58,237,.28),transparent 64%),
+    radial-gradient(700px 460px at 85% 30%,rgba(255,122,24,.12),transparent 60%),
+    var(--bg);
+  border-bottom:1px solid var(--line);
+}
+@media(max-width:720px){.hero{padding:34px 0 40px}}
+.hero h1{margin-bottom:20px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--pu-2)}
+.hero .lead{max-width:640px;margin:0 auto 26px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 26px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:700;color:var(--txt-2);
+  background:rgba(168,85,247,.08);border:1px solid var(--line-2);padding:9px 16px;border-radius:100px}
+.badge b{color:#fff}
+.badge svg{width:15px;height:15px;color:var(--pu-2);flex:0 0 auto}
+.precio-hero{
+  display:inline-flex;align-items:baseline;gap:8px;margin:0 0 22px;
+  font-family:'Space Grotesk',monospace;font-weight:700;letter-spacing:-.04em;line-height:1;
+}
+.precio-hero .n{font-size:clamp(2.6rem,7vw,4rem);
+  background:linear-gradient(120deg,#fff,var(--pu-2) 55%,var(--or-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.precio-hero .m{font-size:1.1rem;color:var(--txt-2);letter-spacing:.06em}
+.precio-hero .tach-hero{font-size:clamp(1.3rem,3vw,1.9rem);color:var(--txt-3);text-decoration:line-through;
+  text-decoration-thickness:2px;opacity:.75;margin-right:4px}
+
+/* VSL */
+.vsl{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-2);background:var(--panel);
+  box-shadow:0 0 0 1px rgba(168,85,247,.08),0 40px 100px rgba(0,0,0,.7),0 0 80px rgba(168,85,247,.14);
+  max-width:860px;margin:34px auto 0}
+.vsl-inner{position:relative;aspect-ratio:16/9;width:100%}
+.vsl-inner iframe,.vsl-inner video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vsl-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;text-align:center;padding:22px;
+  background:radial-gradient(620px 320px at 50% 42%,rgba(168,85,247,.28),transparent 72%),
+    linear-gradient(165deg,rgba(10,8,20,.62),rgba(6,5,13,.86))}
+.play{width:70px;height:70px;border-radius:50%;background:linear-gradient(120deg,var(--pu),var(--or));
+  display:grid;place-items:center;box-shadow:0 12px 44px rgba(168,85,247,.5);animation:pl 2.6s ease-in-out infinite}
+@keyframes pl{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.play svg{width:24px;height:24px;margin-left:4px}
+.vsl-ph .t{font-weight:800;font-size:1rem;max-width:460px;line-height:1.35}
+.vsl-ph .s{font-size:.8rem;color:var(--or-2);max-width:420px}
+
+/* ═════════ SECCIONES ALTERNAS ═════════ */
+.alt{background:var(--bg-2);border-block:1px solid var(--line)}
+
+/* narrativa */
+.narrativa p{font-size:clamp(1.02rem,1.8vw,1.15rem);color:var(--txt-2);line-height:1.72}
+.narrativa p strong{color:#fff}
+.golpe{margin:26px 0 0;padding:24px 28px;border-left:2px solid;
+  border-image:linear-gradient(180deg,var(--pu),var(--or)) 1;
+  background:linear-gradient(90deg,rgba(168,85,247,.09),transparent);
+  font-size:clamp(1.08rem,2.2vw,1.38rem);font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.45}
+
+/* comparación */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+@media(max-width:780px){.vs{grid-template-columns:1fr}}
+.vscol{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px}
+.vscol.mal{border-color:rgba(255,80,120,.22);background:linear-gradient(180deg,rgba(255,80,120,.04),var(--panel))}
+.vscol.bien{border-color:rgba(52,211,153,.3);background:linear-gradient(180deg,rgba(52,211,153,.05),var(--panel))}
+.vscol .et{font-family:'Space Grotesk',monospace;font-size:.68rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:12px}
+.vscol.mal .et{color:var(--no)}
+.vscol.bien .et{color:var(--ok)}
+.vscol h3{font-size:clamp(1.2rem,2.2vw,1.5rem);margin-bottom:14px;line-height:1.22}
+.vscol p{font-size:.96rem;color:var(--txt-2);margin:0;line-height:1.62}
+
+/* bio del instructor */
+.bio{display:grid;grid-template-columns:300px 1fr;gap:38px;align-items:start;margin-top:26px}
+@media(max-width:820px){.bio{grid-template-columns:1fr;gap:24px}}
+.bio-foto{border-radius:var(--r);border:1px dashed rgba(255,176,32,.4);background:rgba(255,176,32,.04);
+  aspect-ratio:4/5;display:grid;place-items:center;gap:10px;padding:20px;text-align:center}
+.bio-foto svg{width:60px;height:60px;color:var(--pu-2)}
+.bio-foto em{font-style:normal;font-size:.78rem;color:var(--or-2);font-weight:700;line-height:1.45}
+.bio-datos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0 18px}
+@media(max-width:480px){.bio-datos{grid-template-columns:1fr}}
+.dato{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.dato .n{font-family:'Space Grotesk',monospace;font-size:1.5rem;font-weight:700;letter-spacing:-.03em;
+  background:linear-gradient(120deg,#fff,var(--pu-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.dato .l{font-size:.72rem;color:var(--txt-3);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-top:2px}
+
+/* beneficios numerados */
+.bens{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px}
+@media(max-width:820px){.bens{grid-template-columns:1fr}}
+.ben{display:flex;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.ben .n{font-family:'Space Grotesk',monospace;font-size:1.5rem;font-weight:700;letter-spacing:-.04em;
+  color:transparent;-webkit-text-stroke:1.5px var(--pu);line-height:1;flex:0 0 auto}
+.ben b{display:block;color:#fff;font-size:1rem;margin-bottom:3px;line-height:1.3}
+.ben span{font-size:.89rem;color:var(--txt-3);line-height:1.55}
+
+/* listas sí / no */
+.filter{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+@media(max-width:820px){.filter{grid-template-columns:1fr}.fcol{padding:28px 24px}}
+.fcol{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:36px 32px}
+.fcol.yes{border-color:rgba(52,211,153,.3);background:linear-gradient(180deg,rgba(52,211,153,.05),var(--panel))}
+.fcol.no{border-color:rgba(255,80,120,.22);background:linear-gradient(180deg,rgba(255,80,120,.04),var(--panel))}
+.fcol h3{display:flex;align-items:center;gap:14px;margin-bottom:24px;
+  font-size:clamp(1.25rem,2.4vw,1.6rem);letter-spacing:-.03em;line-height:1.2}
+.fi{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.fi svg{width:19px;height:19px}
+.marca{font-style:normal;font-weight:900;font-size:1.2em;padding:0 .1em}
+.fcol.yes .marca{color:var(--ok);text-shadow:0 0 26px rgba(52,211,153,.55)}
+.fcol.no .marca{color:var(--no);text-shadow:0 0 26px rgba(255,80,120,.5)}
+.fcol.yes .fi{background:rgba(52,211,153,.16);color:var(--ok)}
+.fcol.no .fi{background:rgba(255,80,120,.14);color:var(--no)}
+.fcol ul{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+.fcol li{position:relative;padding-left:28px;font-size:clamp(.98rem,1.6vw,1.08rem);color:var(--txt);line-height:1.55}
+.fcol li::before{position:absolute;left:0;top:-.05em;font-weight:900;font-size:1.12em}
+.fcol.yes li::before{content:"\2713";color:var(--ok)}
+.fcol.no li::before{content:"\2715";color:var(--no)}
+
+/* detalles del evento */
+.evento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;max-width:800px;margin-inline:auto}
+@media(max-width:680px){.evento{grid-template-columns:1fr}}
+.ev{background:var(--panel);border:1px solid var(--line-2);border-radius:14px;padding:24px 18px;text-align:center}
+.ev .l{font-family:'Space Grotesk',monospace;font-size:.64rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--txt-3);margin-bottom:8px}
+.ev .v{font-family:'Space Grotesk',monospace;font-size:1.3rem;font-weight:700;letter-spacing:-.02em;color:#fff}
+.ev .v small{display:block;font-size:.74rem;font-weight:600;color:var(--txt-3);letter-spacing:0;margin-top:4px}
+
+/* testimonios */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+@media(max-width:880px){.testis{grid-template-columns:1fr}}
+.testi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;
+  display:flex;flex-direction:column;gap:14px}
+.testi .quote{color:var(--pu);opacity:.4;width:26px;height:26px}
+.testi blockquote{margin:0;font-size:.97rem;line-height:1.6;color:var(--txt)}
+.testi .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:4px}
+.testi .av{width:40px;height:40px;border-radius:50%;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--pu-3),#1A1430);border:1px solid var(--line-2);
+  display:grid;place-items:center;font-weight:800;font-size:.86rem;color:var(--txt-2)}
+.testi .who b{display:block;font-size:.92rem;color:#fff}
+.testi .who span{font-size:.8rem;color:var(--txt-3)}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+@media(max-width:880px){.vids{grid-template-columns:1fr}}
+.vid{aspect-ratio:9/16;border-radius:16px;border:1px dashed rgba(255,176,32,.4);background:rgba(255,176,32,.04);
+  display:grid;place-items:center;gap:10px;padding:20px;text-align:center}
+.vid svg{width:44px;height:44px;color:var(--pu-2)}
+.vid em{font-style:normal;font-size:.78rem;color:var(--or-2);font-weight:700;line-height:1.45}
+
+/* desglose de valor */
+.stack{max-width:720px;margin:32px auto 0;background:var(--panel);border:1px solid var(--line-2);
+  border-radius:22px;padding:38px 34px;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 70px rgba(168,85,247,.12)}
+@media(max-width:620px){.stack{padding:28px 22px}}
+.stack ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:0}
+.stack li{display:flex;gap:14px;align-items:flex-start;
+  padding:15px 0;border-bottom:1px solid var(--line);font-size:.96rem;color:var(--txt-2)}
+.stack li:last-child{border-bottom:0}
+.stack li .q{display:flex;gap:11px;align-items:flex-start}
+.stack li svg{flex:0 0 auto;width:16px;height:16px;margin-top:4px;color:var(--pu-2)}
+.stack li b{color:#fff;font-weight:700}
+.precio-grande{font-family:'Space Grotesk',monospace;font-size:clamp(2.4rem,7vw,3.4rem);font-weight:700;
+  letter-spacing:-.04em;line-height:1;text-align:center;margin:6px 0 4px;
+  background:linear-gradient(120deg,#fff,var(--pu-2) 60%,var(--or-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.precio-grande sup{font-size:.36em;vertical-align:super;margin-right:5px}
+
+/* garantía */
+.garantia{max-width:720px;margin:30px auto 0;background:var(--panel);border:1px solid var(--line-2);
+  border-radius:22px;padding:36px 32px;text-align:center}
+.gsello{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(52,211,153,.22),rgba(168,85,247,.14));color:var(--ok)}
+.gsello svg{width:32px;height:32px}
+
+/* FAQ */
+.faq{max-width:800px;margin:30px auto 0}
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+details[open]{border-color:var(--line-2)}
+summary{cursor:pointer;padding:20px 24px;font-weight:700;font-size:1rem;color:#fff;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;font-weight:400;color:var(--pu-2);flex:0 0 auto;line-height:1}
+details[open] summary::after{content:"\2212"}
+details .a{padding:0 24px 22px;color:var(--txt-2);font-size:.95rem;line-height:1.65}
+details .a p:last-child{margin-bottom:0}
+
+/* cierre */
+.cierre{background:radial-gradient(900px 460px at 50% 0%,rgba(255,122,24,.16),transparent 62%),var(--bg-2);
+  border-top:1px solid var(--line)}
+.garantias-min{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:20px;
+  font-size:.84rem;color:var(--txt-3);font-weight:600}
+.garantias-min span{display:inline-flex;align-items:center;gap:7px}
+.garantias-min svg{width:14px;height:14px;color:var(--ok)}
+
+/* pie */
+footer{padding:48px 0 30px;border-top:1px solid var(--line);background:var(--bg-2)}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:34px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr;gap:24px}}
+.foot-brand p{font-size:.86rem;color:var(--txt-3);margin:14px 0 0;line-height:1.7}
+.foot-nav{display:flex;flex-direction:column;gap:9px}
+.foot-h{font-family:'Space Grotesk',monospace;font-size:.66rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--txt-2);margin-bottom:4px}
+.foot-nav a{font-size:.88rem;color:var(--txt-3);text-decoration:none;transition:color .18s}
+.foot-nav a:hover{color:var(--pu-2)}
+.legal{padding:24px 0;border-bottom:1px solid var(--line)}
+.legal p{font-size:.73rem;line-height:1.65;color:var(--txt-3);margin:0 0 12px;max-width:88ch}
+.legal p:last-child{margin-bottom:0}
+.legal strong{color:var(--txt-2);font-weight:700}
+.legal a{color:var(--txt-2)}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;
+  font-size:.77rem;color:var(--txt-3)}
+
+/* foco y movimiento */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--or-2);outline-offset:3px;border-radius:6px}
+:focus:not(:focus-visible){outline:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ 1 · BARRA SUPERIOR ══════════════ -->
+<div class="top">
+  <div class="wrap">
+    <!-- [ ] LOGO — cuando exista, sustituye este div.lock por la imagen -->
+    <div class="lock"><b>Lanza tu Podcast</b><span>Sinergéticos</span></div>
+    <span class="top-tag">Clase en vivo</span>
+  </div>
+</div>
+
+<!-- ══════════════ 2 · HERO ══════════════ -->
+<header class="hero grid-bg">
+  <div class="wrap center">
+
+    <h1>Lanza tu podcast en YouTube.<br>Los primeros <em>10 episodios</em>.</h1>
+
+    <p class="lead">En una clase de tres horas sales con <strong>la estrategia y el sistema para
+    grabar y publicar tus primeros 10 episodios</strong>: el nombre, los temas, las preguntas, las
+    portadas, los clips y la publicación. <strong>Con lo que ya tienes.</strong></p>
+
+    <div class="badges">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>3 horas</span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="15" height="14" rx="3"/><path d="m17 10 5-3v10l-5-3z"/></svg>En vivo, <b>sin repetición</b></span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg><b>Miércoles 7:00 PM</b> (CDMX)</span>
+      <!-- [ ] ¿Cuántos espacios? Si el cupo no está topado de verdad, esta insignia se quita. -->
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><b>Espacios limitados</b></span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>Incluye <b>entrada a la comunidad</b></span>
+    </div>
+
+    <div class="precio-hero"><span class="tach-hero">247</span><span class="n">27</span><span class="m">USD</span></div>
+
+    <p style="margin:0"><a href="#inscribirme" class="btn">&rarr; COMPRA TU ACCESO A LA CLASE — 27 USD</a></p>
+    <p class="cta-sub">Acceso inmediato. La clase es en vivo y no se graba.</p>
+
+    <!-- ░░░ VSL ░░░
+         Para publicar el vídeo, sustituye TODO el div.vsl-ph por:
+         <iframe src="URL_DEL_REPRODUCTOR" allow="autoplay; fullscreen" allowfullscreen></iframe>
+         o bien: <video src="vsl.mp4" controls poster="poster.jpg"></video> -->
+    <div class="vsl">
+      <div class="vsl-inner">
+        <div class="vsl-ph">
+          <div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="t">Por qué tu podcast sigue sin existir, y qué hace falta de verdad para lanzarlo</div>
+          <div class="s">[ ] Hueco del VSL — sustituye este bloque por el reproductor.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ══════════════ 3 · EL PROBLEMA, EN UNA FRASE ══════════════ -->
+<section class="alt">
+  <div class="wrap center narrow">
+    <h2>No te falta equipo.<br>Te falta la estrategia y el sistema.</h2>
+    <p class="lead">Nadie deja su podcast por tener mal micrófono. Lo deja porque no sabe qué
+    grabar la semana que viene, ni a quién invitar, ni qué preguntarle.
+    <strong>En tres horas sales con eso resuelto para diez episodios.</strong></p>
+    <p style="margin:22px 0 0"><a href="#inscribirme" class="btn">&rarr; COMPRA TU ACCESO A LA CLASE — 27 USD</a></p>
+  </div>
+</section>
+
+<!-- ══════════════ 4 · NARRATIVA ══════════════ -->
+<section>
+  <div class="wrap narrow narrativa">
+    <h2 class="center" style="margin-bottom:28px">Lo has intentado. Y siempre te frena lo mismo.</h2>
+
+    <p><em>«No sé qué equipo necesito para grabar mi podcast.»</em> Y no hablas solo de
+    micrófonos: hablas también de <strong>gente</strong>. Un editor, alguien que suba los vídeos,
+    alguien que haga las portadas. Cuanto más lo piensas, más se parece a montar una empresa.</p>
+
+    <p><em>«No le entiendo a YouTube.»</em> Títulos, miniaturas, categorías, un algoritmo del que
+    todo el mundo habla y nadie explica. Y el formato largo te impone:
+    <strong>media hora de contenido parece muchísimo cuando nunca has grabado veinte minutos.</strong></p>
+
+    <p><em>«No sé por dónde empezar.»</em> No sabes qué temas elegir, ni a quién invitar, ni qué
+    preguntarle si viene. Y sin eso, encender la cámara no tiene sentido.</p>
+
+    <p>Ninguna de las tres es el problema de fondo. <strong>El problema es que te falta la
+    estrategia y el sistema</strong> — y sin ellos hasta el que tiene el mejor equipo del mundo
+    graba dos episodios y lo deja.</p>
+
+    <!-- Dato aportado por Gio (2026-08-28). [ ] Falta la fuente: si esta página recibe pauta,
+         una estadística de mercado conviene poder citarla. -->
+    <p class="golpe">El 80&nbsp;% de los podcasts nuevos muere en el episodio 5.<br>No por falta de
+    talento: por <span class="hl">falta de estrategia y de sistema</span>.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 5 · LA DIFERENCIA ══════════════ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>La diferencia no es el equipo.<br>Es el orden.</h2>
+    </div>
+
+    <div class="vs">
+      <div class="vscol mal">
+        <div class="et">La mayoría</div>
+        <h3>Busca el equipo y el invitado estrella.</h3>
+        <p>Micrófono, cámara, un editor, y esperar a que alguien importante acepte. Cuando por fin
+        graba, tiene un episodio suelto y ninguna idea de cuál es el siguiente.
+        <strong>Todo se queda en el cajón.</strong></p>
+      </div>
+      <div class="vscol bien">
+        <div class="et">Los que publican</div>
+        <h3>Tienen temas, preguntas y un sistema.</h3>
+        <p>Saben de qué van sus diez primeros episodios y qué van a preguntar en cada uno. Por eso
+        el martes siguiente no tienen que decidir nada: <strong>solo grabar el que toca.</strong></p>
+      </div>
+    </div>
+
+    <p class="center lead" style="margin:26px auto 0;max-width:660px">Lo que consume el tiempo no
+    es grabar. <strong>Es decidir qué grabar y qué preguntar.</strong> Por eso esta clase termina
+    con diez decisiones tomadas y no con una lista de deberes.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 6 · QUIÉN LA DA ══════════════ -->
+<section>
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>Quién te la va a dar.</h2>
+    </div>
+
+    <div class="bio">
+      <!-- [ ] Sustituir por la foto del ponente (retrato vertical, 4:5) -->
+      <div class="bio-foto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <em>[ ] Foto del ponente</em>
+      </div>
+
+      <div>
+        <h3 style="font-size:clamp(1.3rem,2.4vw,1.7rem);margin-bottom:4px">Gio</h3>
+        <p style="color:var(--pu-2);font-weight:700;margin:0 0 16px">Principal productor del Podcast
+        Sinergéticos · Experto en ecosistemas digitales</p>
+
+        <p class="lead"><strong>Empezamos el 28 de junio de 2021, con un set improvisado en un
+        despacho.</strong> Sin estudio, sin equipo profesional y sin un solo seguidor. Hoy
+        Sinergéticos es <strong>el podcast de negocios número uno de México según Spotify</strong>,
+        con más de 4 millones de descargas y una red de más de 18 millones de seguidores.</p>
+
+        <!-- ░░░ [ ] PERMISO. Confirmar que se puede nombrar a estas personas en una página con
+             pauta. Si no, cambiar la frase por: «hemos asesorado en contenido a referentes de la
+             industria» y borrar la lista. -->
+        <p class="lead">Y no lo hemos hecho solo con nuestro podcast: <strong>hemos capacitado y
+        asesorado en contenido a Margarita Pasos, César Lozano, Ismael Cala, Vilma Núñez, Nayo
+        Escobar, Daniel Marcos y varios más.</strong> Hemos visto qué decisiones toman los grandes
+        creadores, y qué errores cometen.</p>
+
+        <p class="lead">No es una clase de teoría: <strong>es el sistema con el que producimos
+        nuestro propio podcast cada semana</strong>, desde El Búnker Sinergético en Guadalajara.</p>
+
+        <div class="bio-datos">
+          <div class="dato"><div class="n">Nº&nbsp;1</div><div class="l">Podcast de negocios en México · Spotify</div></div>
+          <div class="dato"><div class="n">1.8M</div><div class="l">Suscriptores en YouTube</div></div>
+          <div class="dato"><div class="n">+125k</div><div class="l">Reseñas de 5 estrellas</div></div>
+          <div class="dato"><div class="n">+500</div><div class="l">Episodios publicados</div></div>
+        </div>
+
+        <p class="note" style="margin:0 0 22px">Son las cifras de nuestro podcast.
+        <strong style="color:var(--txt-2)">No son una promesa de lo que vas a conseguir tú</strong> —
+        están aquí para que sepas quién te lo está enseñando. Y empezamos igual que tú: sin nada.</p>
+
+        <p class="golpe" style="margin-top:0">Esta clase es lo que nos habría ahorrado los dos
+        primeros años.</p>
+        <p class="note" style="margin-top:14px">Gio · socio y productor de Sinergéticos. Detrás de
+        cámaras desde el día uno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 7 · QUÉ VAS A SABER ══════════════ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>En 3 horas vas a saber</h2>
+    </div>
+
+    <div class="bens">
+      <div class="ben"><div class="n">1</div><div><b>Cómo ponerle nombre a tu podcast</b><span>A quién le hablas, qué le prometes y cómo se dice eso en un nombre. El nombre no es creativo: es posicionamiento.</span></div></div>
+      <div class="ben"><div class="n">2</div><div><b>Cómo elegir los temas de tus 10 episodios</b><span>Los temas no se inventan: se encuentran en lo que tu público ya pregunta. Sales con los diez decididos y en orden.</span></div></div>
+      <div class="ben"><div class="n">3</div><div><b>Cómo hacer preguntas estratégicas</b><span>Lo que separa una entrevista buena de una charla. Y es también lo que hace que no necesites un invitado famoso.</span></div></div>
+      <div class="ben"><div class="n">4</div><div><b>Cómo grabar tus episodios</b><span>El equipo técnico y el humano que necesitas de verdad — y el que no. Con el precio de cada cosa en pantalla.</span></div></div>
+      <div class="ben"><div class="n">5</div><div><b>Cómo diseñar títulos y portadas</b><span>Lo que decide si alguien hace clic. Y te llevas el prompt con el que los generamos.</span></div></div>
+      <div class="ben"><div class="n">6</div><div><b>El sistema para clipear y publicar</b><span>Cómo un episodio se convierte en clips para las demás redes, y cómo se publica en YouTube sin perderse.</span></div></div>
+    </div>
+
+    <p class="center" style="margin-top:32px"><a href="#inscribirme" class="btn">&rarr; COMPRA TU ACCESO A LA CLASE — 27 USD</a></p>
+  </div>
+</section>
+
+<!-- ══════════════ 8 · TESTIMONIOS EN VÍDEO ══════════════
+     ░░░ [ ] PENDIENTE. Regla de Sinergéticos: no se inventan testimonios.
+     Al tener los vídeos, sustituye cada div.vid por el reproductor vertical. -->
+<section>
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>Los que ya dejaron de posponerlo.</h2>
+    </div>
+    <div class="vids">
+      <div class="vid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="15" height="14" rx="3"/><path d="m17 10 5-3v10l-5-3z"/></svg><em>[ ] Vídeo 1 — el que llevaba años diciéndolo</em></div>
+      <div class="vid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="15" height="14" rx="3"/><path d="m17 10 5-3v10l-5-3z"/></svg><em>[ ] Vídeo 2 — el que creía que necesitaba estudio</em></div>
+      <div class="vid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="15" height="14" rx="3"/><path d="m17 10 5-3v10l-5-3z"/></svg><em>[ ] Vídeo 3 — el que no soportaba verse en cámara</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 9 · PARA QUIÉN ES / NO ES ══════════════ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>Para quién es esta clase.</h2>
+      <p class="lead">Preferimos decírtelo aquí que después.</p>
+    </div>
+
+    <div class="filter">
+      <div class="fcol yes">
+        <h3><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></span>Es <em class="marca">para ti</em> si…</h3>
+        <ul>
+          <li>Quieres <strong>lanzar tu podcast en YouTube</strong> y llevas meses dándole vueltas.</li>
+          <li>Te manejas en digital, pero <strong>de crear contenido sabes poco</strong>.</li>
+          <li>Quieres <strong>aprender a hacerlo tú</strong>, o con tu equipo, en vez de contratarlo.</li>
+          <li>Ya lo intentaste: <strong>publicaste uno o dos y lo dejaste</strong>.</li>
+          <li>Tienes algo que decir y <strong>no sabes por dónde se empieza</strong>.</li>
+          <li>Estás dispuesto a <strong>trabajar durante la clase</strong>, no solo a mirar.</li>
+        </ul>
+      </div>
+
+      <div class="fcol no">
+        <h3><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M18 6 6 18M6 6l12 12"/></svg></span><em class="marca">No</em> es para ti si…</h3>
+        <ul>
+          <li>Buscas <strong>que alguien te lo haga</strong> llave en mano.</li>
+          <li><strong>No piensas aparecer</strong> ni en cámara ni en audio.</li>
+          <li>Quieres <strong>una audiencia grande en un mes</strong>. Eso no lo vende nadie honesto.</li>
+          <li>Ya publicas <strong>de forma constante</strong> y lo que quieres es crecer. Esto es para arrancar.</li>
+          <li>No vas a <strong>reservar las tres horas</strong>. Media clase es trabajo tuyo.</li>
+          <li>Esperas <strong>que te consigamos los invitados</strong>. Aquí aprendes a no necesitarlos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 10 · CUÁNDO ES ══════════════ -->
+<section>
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>Cuándo es.</h2>
+    </div>
+    <div class="evento">
+      <div class="ev"><div class="l">Día</div><div class="v">Miércoles</div></div>
+      <div class="ev"><div class="l">Hora</div><div class="v">7:00 PM<small>Hora de Ciudad de México</small></div></div>
+      <div class="ev"><div class="l">Dónde</div><div class="v">En vivo<small>Online, sin repetición</small></div></div>
+    </div>
+    <!-- [ ] Decidir si se muestra la fecha exacta de la próxima clase, o solo el día fijo semanal. -->
+    <p class="center note">El enlace y los recordatorios te llegan al reservar.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 11 · TESTIMONIOS ESCRITOS ══════════════
+     ░░░ [ ] PENDIENTE. No se inventan testimonios. Al meter uno real:
+     quita class="pending", y pon cita, nombre y el nombre de su podcast. -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>Lo que cuentan.</h2>
+    </div>
+    <div class="testis">
+      <div class="testi pending">
+        <svg class="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M9.9 4.5C5.9 6.6 3.4 10.3 3.4 14.4c0 3.2 1.9 5.1 4.2 5.1 2.1 0 3.7-1.6 3.7-3.6 0-2-1.4-3.5-3.3-3.5-.4 0-.9.1-1 .1.3-2.1 2.3-4.6 4.3-5.8l-1.4-2.2zm10.2 0c-4 2.1-6.5 5.8-6.5 9.9 0 3.2 1.9 5.1 4.2 5.1 2.1 0 3.7-1.6 3.7-3.6 0-2-1.4-3.5-3.3-3.5-.4 0-.9.1-1 .1.3-2.1 2.3-4.6 4.3-5.8l-1.4-2.2z"/></svg>
+        <blockquote>[ ] Testimonio 1 — el del tiempo: cuánto llevaba posponiéndolo y cuánto tardó en publicar después de la clase.</blockquote>
+        <div class="who"><div class="av">?</div><div><b>[ ] Nombre</b><span>[ ] Su podcast · Ciudad</span></div></div>
+      </div>
+      <div class="testi pending">
+        <svg class="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M9.9 4.5C5.9 6.6 3.4 10.3 3.4 14.4c0 3.2 1.9 5.1 4.2 5.1 2.1 0 3.7-1.6 3.7-3.6 0-2-1.4-3.5-3.3-3.5-.4 0-.9.1-1 .1.3-2.1 2.3-4.6 4.3-5.8l-1.4-2.2zm10.2 0c-4 2.1-6.5 5.8-6.5 9.9 0 3.2 1.9 5.1 4.2 5.1 2.1 0 3.7-1.6 3.7-3.6 0-2-1.4-3.5-3.3-3.5-.4 0-.9.1-1 .1.3-2.1 2.3-4.6 4.3-5.8l-1.4-2.2z"/></svg>
+        <blockquote>[ ] Testimonio 2 — el del equipo: creía que necesitaba estudio y grabó con el teléfono.</blockquote>
+        <div class="who"><div class="av">?</div><div><b>[ ] Nombre</b><span>[ ] Su podcast · Ciudad</span></div></div>
+      </div>
+      <div class="testi pending">
+        <svg class="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M9.9 4.5C5.9 6.6 3.4 10.3 3.4 14.4c0 3.2 1.9 5.1 4.2 5.1 2.1 0 3.7-1.6 3.7-3.6 0-2-1.4-3.5-3.3-3.5-.4 0-.9.1-1 .1.3-2.1 2.3-4.6 4.3-5.8l-1.4-2.2zm10.2 0c-4 2.1-6.5 5.8-6.5 9.9 0 3.2 1.9 5.1 4.2 5.1 2.1 0 3.7-1.6 3.7-3.6 0-2-1.4-3.5-3.3-3.5-.4 0-.9.1-1 .1.3-2.1 2.3-4.6 4.3-5.8l-1.4-2.2z"/></svg>
+        <blockquote>[ ] Testimonio 3 — el de la cámara: no soportaba verse, y hoy publica cada semana.</blockquote>
+        <div class="who"><div class="av">?</div><div><b>[ ] Nombre</b><span>[ ] Su podcast · Ciudad</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 12 · QUÉ RECIBES ══════════════ -->
+<section id="inscribirme">
+  <div class="wrap">
+    <div class="center narrow">
+      <h2>Esto es lo que te llevas.</h2>
+    </div>
+
+    <div class="stack">
+      <ul>
+        <li><div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg><span><b>La clase en vivo, 3 horas</b><br>De 7:00 a 10:00 PM (CDMX), con trabajo guiado y tiempo en pantalla.</span></div></li>
+        <li><div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg><span><b>La demostración completa</b><br>Grabamos, editamos, clipeamos y publicamos un episodio delante de ti. Con un teléfono.</span></div></li>
+        <li><div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg><span><b>Tu plan de 10 episodios</b><br>Terminado en la sala, tema a tema. Es lo que hace que el martes sepas qué grabar.</span></div></li>
+        <li><div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg><span><b>Las tres plantillas</b><br>Definición estratégica, plan de 10 y checklist técnico con la lista de compra.</span></div></li>
+        <li><div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg><span><b>El prompt de títulos y miniaturas</b><br>El mismo con el que generamos los nuestros. Te lo llevas para los diez episodios y para los que vengan.</span></div></li>
+        <li><div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg><span><b>Entrada a la comunidad Podcast Mastery</b><br>Acceso gratuito, sin caducidad. Cada martes analizamos en vivo el canal de alguien de la comunidad y canales que ya funcionan. Ahí es donde vas a ver qué se hace con un podcast después del episodio 10.</span></div></li>
+        <li><div class="q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg><span><b>Revisiones en directo</b><br>Se revisan planes de la sala, con nombre y apellido. También aprendes de los que no son el tuyo.</span></div></li>
+      </ul>
+
+      <p class="center" style="margin:24px 0 0;font-size:.9rem;color:var(--txt-3)">
+        Precio real de la clase: <span style="text-decoration:line-through">247 USD</span></p>
+      <div class="precio-grande" style="margin-top:2px"><sup>USD</sup>27</div>
+      <p class="center note" style="margin:0 0 22px">Pago único. No es una suscripción.</p>
+
+      <!-- ░░░ [ ] CHECKOUT — sustituye el href por la URL real de pago (Stripe o Mercado Pago). -->
+      <p class="center" style="margin:0"><a href="#" class="btn full" id="cta-checkout">&rarr; COMPRA TU ACCESO A LA CLASE — 27 USD</a></p>
+      <p class="cta-sub center">Miércoles 7:00 PM (CDMX) · Espacios limitados · El enlace te llega al comprar</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 13 · GARANTÍA ══════════════ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="garantia">
+      <div class="gsello"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">Sales con el plan hecho, o no pagas.</h2>
+      <p class="lead" style="max-width:540px;margin:0 auto">Si al terminar las tres horas no te
+      llevas tus diez episodios planeados, <strong>escríbenos y te devolvemos los 27 dólares</strong>.
+      Sin trámites y sin preguntas.</p>
+      <p class="note" style="max-width:540px;margin:16px auto 0">Es la única garantía que tiene
+      sentido aquí. No te prometemos audiencia — eso no depende de nosotros. Te prometemos que
+      sales con el trabajo hecho, y eso sí.</p>
+      <!-- [ ] Confirmar el plazo para reclamarla y a qué correo se escribe. -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 14 · FAQ ══════════════
+     ░░░ [ ] Las seis primeras respuestas son PROPUESTAS, sin aprobar.
+     La biblioteca de objeciones de Sinergéticos está escrita para quien ya publica.
+     Al aprobar cada una: quita class="pending" y el span.aviso, y súbela a la biblioteca. -->
+<section>
+  <div class="wrap">
+    <div class="center narrow"><h2>Las dudas, contestadas.</h2></div>
+    <div class="faq">
+
+      <details open>
+        <summary>No tengo equipo. Ni técnico, ni de personas.</summary>
+        <div class="a"><p><strong>Todo lo puedes hacer tú apoyándote de la IA.</strong> El equipo
+        humano que crees que necesitas —editor, diseñador, alguien que suba los vídeos— es
+        exactamente lo que hoy resuelve una persona sola con las herramientas correctas. En la
+        clase ves cuáles y cómo se usan.</p>
+        <p>Y del equipo técnico: se graba con lo que ya tienes. <strong>Media hora de la clase es
+        para que sepas qué comprar, en qué orden, y qué no comprar todavía.</strong></p></div>
+      </details>
+
+      <details>
+        <summary>No le entiendo a YouTube.</summary>
+        <div class="a"><p>No es que no le entiendas: <strong>te falta conocer la estrategia.</strong>
+        YouTube no es un misterio técnico, es un sitio donde el título y la miniatura deciden si
+        alguien abre, y donde la estructura del episodio decide si se queda.</p>
+        <p>Las dos cosas se enseñan el miércoles, <strong>y te llevas el prompt con el que
+        generamos nuestros títulos y miniaturas.</strong></p></div>
+      </details>
+
+      <details>
+        <summary>No tengo invitados. No conozco a nadie importante.</summary>
+        <div class="a"><p><strong>Necesitas temas interesantes y preguntas estratégicas mucho más
+        que invitados estelares.</strong> Es el error que hace que la gente no arranque nunca:
+        esperar a que alguien con nombre acepte.</p>
+        <p>Un episodio con un invitado normal y buenas preguntas funciona mejor que uno con alguien
+        famoso y preguntas de relleno. <strong>Y los primeros diez puedes grabarlos tú solo.</strong></p></div>
+      </details>
+
+      <details class="pending">
+        <summary>No sé cómo hacer una entrevista.</summary>
+        <div class="a"><span class="aviso">[ ] Respuesta propuesta, sin aprobar</span>
+        <p>Una entrevista no se improvisa: se prepara. <strong>Hay cinco tipos de pregunta</strong>
+        —contexto, profundidad, historia, contraste y acción— y con ellos se arma cualquier
+        conversación. En la clase los ves y escribes las tuyas.</p></div>
+      </details>
+
+      <details class="pending">
+        <summary>El formato largo me impone. ¿Media hora hablando?</summary>
+        <div class="a"><span class="aviso">[ ] Respuesta propuesta, sin aprobar</span>
+        <p>Media hora en blanco impone a cualquiera. <strong>Media hora con cinco temas y sus
+        preguntas escritas dura menos de lo que crees</strong> — el problema nunca fue el tiempo,
+        fue la hoja en blanco.</p>
+        <p>Y no empiezas por media hora: los primeros episodios son de 20 a 30 minutos, y esa
+        estructura la construyes en la clase.</p></div>
+      </details>
+
+      <details class="pending">
+        <summary>¿Y si no lo ve nadie? No tengo seguidores.</summary>
+        <div class="a"><span class="aviso">[ ] Respuesta propuesta, sin aprobar</span>
+        <p>Los primeros episodios los ve poca gente. Los nuestros también.
+        <strong>Un podcast no se mide por el episodio 1, se mide por el 10</strong> — y por eso la
+        clase entera va de planear diez. Ocho de cada diez abandonan antes del quinto, y ninguno
+        llega a saber si funcionaba.</p>
+        <p>Los seguidores no son el punto de partida: <strong>son la consecuencia de publicar con
+        estrategia.</strong> Y los clips son la parte del sistema que trae gente nueva.</p></div>
+      </details>
+
+      <details class="pending">
+        <summary>No me gusta cómo me veo ni cómo sueno.</summary>
+        <div class="a"><span class="aviso">[ ] Respuesta propuesta, sin aprobar</span>
+        <p>A casi nadie le gusta la primera vez, y no se arregla pensándolo: se arregla grabando.
+        <strong>Lo que sí se puede mejorar el mismo día es el encuadre, la luz y el audio</strong> —
+        y eso cambia más de lo que crees. El resto se pasa hacia el episodio 4.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Puedo verla después si no llego en vivo?</summary>
+        <div class="a"><p><strong>No. La clase no se graba.</strong> Y no es escasez inventada:
+        media clase es trabajo tuyo con nosotros mirando, y al final se revisan planes de la sala.
+        Grabado eso no existe — sería otra cosa, y peor.</p>
+        <!-- [ ] Propuesta, sin aprobar: pase a la semana siguiente en vez de reembolso. -->
+        <p><span class="aviso">[ ] Propuesta, sin aprobar</span><br>Si te surge algo,
+        <strong>te pasamos a la clase del miércoles siguiente</strong>.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Qué necesito tener el día de la clase?</summary>
+        <div class="a"><p>Un teléfono, auriculares y con qué escribir. Nada más. Si ya tienes
+        micrófono o cámara, tráelos — pero <strong>no compres nada antes de la clase</strong>: media
+        hora es exactamente para que sepas qué comprar y qué no.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cómo entro el día de la clase?</summary>
+        <div class="a">
+          <!-- [ ] Confirmar el mecanismo. Propuesta: grupo de WhatsApp con el enlace fijado. -->
+          <p class="hueco">[ ] Falta confirmar cómo llega el enlace. Propuesta: grupo de WhatsApp con el enlace fijado arriba, y recordatorio el día antes y una hora antes.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Es seguro el pago?</summary>
+        <div class="a">
+          <!-- [ ] Nombrar la pasarela real cuando esté decidida (Stripe o Mercado Pago). -->
+          <p class="hueco">[ ] Falta nombrar la pasarela de pago. Se contesta sola cuando esté el checkout.</p></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 15 · CIERRE ══════════════ -->
+<section class="cierre">
+  <div class="wrap center narrow">
+    <h2>Tu podcast en YouTube,<br>empezando este mes.</h2>
+    <p class="lead">Con su nombre, sus diez primeros episodios decididos y las preguntas ya
+    escritas. <strong>No hace falta un estudio, ni un equipo, ni un invitado famoso:</strong> hace
+    falta la estrategia y el sistema, y eso es exactamente lo que se enseña el miércoles.</p>
+    <p class="lead">Y no te quedas solo al terminar: <strong>entras gratis a la comunidad Podcast
+    Mastery</strong>, donde cada martes analizamos canales en vivo.</p>
+
+    <p style="margin:26px 0 0"><a href="#inscribirme" class="btn">&rarr; SÍ, QUIERO LANZAR MI PODCAST — 27 USD</a></p>
+
+    <div class="garantias-min">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>Sales con el plan o te devolvemos</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>Acceso inmediato</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>Espacios limitados</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="lock"><b>Lanza tu Podcast</b><span>Una clase de Sinergéticos</span></div>
+        <p>El Búnker Sinergético · Guadalajara, México</p>
+      </div>
+      <nav class="foot-nav" aria-label="Secciones">
+        <span class="foot-h">La clase</span>
+        <a href="#contenido">Qué vas a saber</a>
+        <a href="#inscribirme">Qué te llevas</a>
+        <a href="#inscribirme">Inscribirme</a>
+      </nav>
+      <nav class="foot-nav" aria-label="Legal">
+        <span class="foot-h">Legal</span>
+        <!-- [ ] Sustituye por las URLs reales -->
+        <a href="#">Aviso de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de cookies</a>
+      </nav>
+    </div>
+
+    <!-- ══ CUMPLIMIENTO PUBLICITARIO ══
+         Obligatorio si esta landing recibe pauta. Revísalo con tu abogado antes de publicar. -->
+    <div class="legal">
+      <p><strong>Descargo de resultados.</strong> Esta clase enseña a planear, grabar y publicar un
+      podcast. <strong>No garantiza audiencia, alcance ni ingresos.</strong> Los resultados dependen
+      del tema, la constancia y la ejecución de cada persona, y varían. Las cifras que aparezcan en
+      esta página corresponden a la operación propia de Sinergéticos y no son una promesa de
+      resultados.</p>
+
+      <p><strong>Sin afiliación con plataformas.</strong> Este sitio no forma parte ni está avalado
+      por Google LLC (YouTube), Spotify AB, Meta Platforms, Inc. (Facebook, Instagram, WhatsApp),
+      TikTok Pte. Ltd. ni Zoom Communications, Inc. Todas las marcas mencionadas pertenecen a sus
+      titulares y se citan con fines descriptivos.</p>
+
+      <p><strong>Datos personales.</strong> Los datos que nos facilites se tratan conforme a nuestro
+      aviso de privacidad, con la finalidad de darte acceso a la clase y enviarte los recordatorios.
+      Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición escribiendo a
+      <a href="mailto:[ ]">[ ] correo de contacto</a>.</p>
+    </div>
+
+    <div class="foot-bottom">
+      <span>&copy; 2026 Sinergéticos</span>
+      <span>Hecho en El Búnker</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

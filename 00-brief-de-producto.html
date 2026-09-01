@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brief de producto — Lanza tu Podcast · Podcast Master</title>
+<meta name="theme-color" content="#090E1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23090E1A'/%3E%3Crect x='12' y='6' width='8' height='13' rx='4' fill='%23FFC83D'/%3E%3Cpath d='M9 15a7 7 0 0 0 14 0' stroke='%23FF6B00' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M16 22v4' stroke='%23FF6B00' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#090E1A; --bg-2:#111827; --panel:#1E293B;
+  --line:rgba(248,250,252,.09); --line-2:rgba(248,250,252,.18);
+  --txt:#F8FAFC; --txt-2:#A1AAB8; --txt-3:#78828F;
+  --cta:#FF6B00; --oro:#FFC83D; --ok:#34D399; --no:#FF5078;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:var(--oro)}
+
+header{border-bottom:1px solid var(--line);background:rgba(9,14,26,.94);position:sticky;top:0;z-index:20;
+  backdrop-filter:blur(10px);padding:15px 0}
+.head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+h1{font-family:'Space Grotesk',monospace;font-size:1.1rem;font-weight:700;letter-spacing:-.03em;margin:0;line-height:1.2}
+h1 span{display:block;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);margin-top:3px}
+nav{display:flex;gap:7px;flex-wrap:wrap;padding:12px 0 0}
+nav a{font-size:.74rem;font-weight:700;color:var(--txt-2);text-decoration:none;
+  border:1px solid var(--line);background:rgba(248,250,252,.03);padding:6px 12px;border-radius:100px}
+nav a:hover{color:var(--txt);border-color:var(--line-2)}
+button.tool{background:rgba(248,250,252,.05);border:1px solid var(--line-2);color:var(--txt-2);
+  font:600 .76rem/1 'Inter',sans-serif;padding:9px 14px;border-radius:100px;cursor:pointer}
+button.tool:hover{color:var(--txt)}
+
+h2{font-family:'Space Grotesk',monospace;font-size:.72rem;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--txt-3);margin:44px 0 16px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:1.02rem;font-weight:800;letter-spacing:-.02em;margin:22px 0 8px;line-height:1.3}
+p{margin:0 0 12px;color:var(--txt-2)}
+strong{color:var(--txt);font-weight:700}
+.intro{padding:28px 0 0}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 30px;margin-bottom:16px}
+.card.prod{border-color:var(--line-2)}
+.prod-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.prod-h .nom{font-size:1.5rem;font-weight:900;letter-spacing:-.035em;line-height:1.1}
+.prod-h .precio{font-family:'Space Grotesk',monospace;font-size:1.1rem;font-weight:700;color:var(--oro);white-space:nowrap}
+.baja{color:var(--txt-2);font-size:.95rem;margin:0 0 20px}
+.escalon{font-family:'Space Grotesk',monospace;font-size:.62rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cta);border:1px solid var(--cta);padding:3px 9px;border-radius:100px}
+
+table{width:100%;border-collapse:collapse;margin:0 0 8px;font-size:.93rem}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--txt-3);font-family:'Space Grotesk',monospace;font-size:.64rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+td:first-child{color:var(--txt-3);white-space:nowrap;padding-right:18px;font-size:.86rem}
+td b,td strong{color:var(--txt)}
+tr:last-child td{border-bottom:0}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--txt-2);display:grid;gap:7px}
+li b{color:var(--txt)}
+li::marker{color:var(--txt-3)}
+
+.cita{border-left:2px solid var(--oro);background:linear-gradient(90deg,rgba(255,200,61,.07),transparent);
+  padding:14px 18px;margin:0 0 14px;color:var(--txt);font-weight:700;font-size:1rem;line-height:1.45}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:840px){.dos{grid-template-columns:1fr}}
+.mini{background:rgba(248,250,252,.03);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.mini h4{margin:0 0 10px;font-size:.92rem;font-weight:800;letter-spacing:-.01em}
+.mini.si{border-color:rgba(52,211,153,.3)}
+.mini.si h4{color:var(--ok)}
+.mini.no{border-color:rgba(255,80,120,.25)}
+.mini.no h4{color:var(--no)}
+.hueco{border:1px dashed rgba(255,200,61,.45);background:rgba(255,200,61,.05);border-radius:12px;
+  padding:14px 18px;color:var(--oro);font-size:.88rem;font-weight:600;line-height:1.55;margin:0 0 14px}
+.chip{display:inline-block;font-family:'Space Grotesk',monospace;font-size:.7rem;font-weight:700;
+  letter-spacing:.06em;background:rgba(248,250,252,.06);border:1px solid var(--line-2);
+  padding:5px 11px;border-radius:6px;margin:0 6px 6px 0}
+.chip.veto{border-color:rgba(255,80,120,.35);color:#FF8FA8;background:rgba(255,80,120,.07);text-decoration:line-through}
+.flujo{font-family:'Space Grotesk',monospace;font-size:.86rem;line-height:1.9;color:var(--txt-2);
+  background:rgba(248,250,252,.03);border:1px solid var(--line);border-radius:12px;padding:20px 24px;
+  overflow-x:auto;white-space:pre}
+.flujo b{color:var(--oro)}
+
+footer{border-top:1px solid var(--line);margin-top:46px;padding:26px 0 44px;color:var(--txt-3);font-size:.82rem}
+
+@media print{
+  body{background:#fff;color:#111;font-size:10.5pt}
+  header{position:static;background:#fff;border-color:#ccc}
+  nav,button.tool{display:none}
+  .card,.mini,.flujo{background:#fff;border:1px solid #bbb;break-inside:avoid}
+  h1,h3,strong,td b,.prod-h .nom,.cita{color:#000}
+  h1 span,.prod-h .precio,.flujo b{color:#B26A00}
+  p,td,li,ul{color:#333}
+  h2{color:#666;border-color:#ccc}
+  .cita{background:none;border-left:2px solid #B26A00}
+  .hueco{background:none;color:#8a6d00}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="head">
+      <h1>Brief de producto<span>Para escribir guiones</span></h1>
+      <button class="tool" onclick="window.print()">Imprimir</button>
+    </div>
+    <nav>
+      <a href="#clase">Lanza tu Podcast</a>
+      <a href="#master">Podcast Master</a>
+      <a href="#embudo">El embudo</a>
+      <a href="#cifras">Cifras que se pueden usar</a>
+      <a href="#objeciones">Objeciones</a>
+      <a href="#lenguaje">Lenguaje</a>
+      <a href="#huecos">Lo que no está cerrado</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="intro">
+  <p>Los dos productos de la línea de podcast, resumidos para tener delante al escribir.
+  <strong>Todo lo que está aquí sale de decisiones tomadas</strong>; lo que sigue abierto está
+  al final, para que no escribas guiones encima de algo que puede cambiar.</p>
+</div>
+
+<!-- ══════════ LA CLASE ══════════ -->
+<h2 id="clase">1 · La clase de entrada</h2>
+
+<div class="card prod">
+  <div class="prod-h">
+    <span class="nom">Lanza tu Podcast</span>
+    <span class="precio">27 USD</span>
+    <span class="escalon">Peldaño 1</span>
+  </div>
+  <p class="baja">Cómo hacer tus primeros 5 episodios</p>
+
+  <table>
+    <tr><td>Qué es</td><td><b>Una clase en vivo.</b> Se paga, se asiste, y al final se hace la oferta de Podcast Master</td></tr>
+    <tr><td>Cuándo</td><td><b>Miércoles, 7:00 PM hora de Ciudad de México.</b> En vivo, <b>sin repetición</b></td></tr>
+    <tr><td>Duración</td><td>3 horas <i>(hay una versión de 2 h 30 sin decidir)</i></td></tr>
+    <tr><td>Dónde</td><td>Zoom</td></tr>
+    <tr><td>Promesa</td><td><b>«La estrategia y el sistema para grabar y publicar tus primeros 5 episodios»</b></td></tr>
+    <tr><td>Garantía</td><td><b>Sales con el plan hecho o te devolvemos los 27</b></td></tr>
+    <tr><td>Ancla</td><td>Precio real 247 USD, tachado sobre los 27</td></tr>
+  </table>
+
+  <h3>Con qué sale el alumno</h3>
+  <ul>
+    <li><b>Su plan de 5 episodios, terminado en la sala.</b> Es el entregable</li>
+    <li>El nombre de su podcast, su posicionamiento y su descripción</li>
+    <li><b>Las tres plantillas:</b> definición estratégica, plan de 5 y checklist técnico con la lista de compra</li>
+    <li><b>El prompt de títulos y miniaturas</b>, el mismo que usamos nosotros</li>
+    <li><b>Entrada gratuita a la comunidad Podcast Master</b>, tier gratuito</li>
+  </ul>
+
+  <h3>Qué se enseña</h3>
+  <ul>
+    <li>Naming y posicionamiento</li>
+    <li><b>Cómo elegir los temas y planear los 5 episodios</b> — el corazón de la clase</li>
+    <li>Preguntas estratégicas y cómo conseguir invitados</li>
+    <li>Grabar: el equipo técnico y el humano que hace falta de verdad</li>
+    <li>Portadas y títulos</li>
+    <li>Clipear y publicar en YouTube</li>
+  </ul>
+
+  <h3>La demostración</h3>
+  <p class="cita">Media hora. Un teléfono. Se graba, se edita, se clipea, se hace la portada y se
+  publica un episodio delante de la sala.</p>
+  <p>Es la parte que responde cuatro de los cinco bloqueos sin argumentar ninguno: no se discute si
+  es caro, se enseña la factura.</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">A quién le habla</h3>
+  <p><b>Quien quiere lanzar su podcast en YouTube.</b> Se maneja en digital, pero de crear contenido
+  sabe poco. La edad da igual.</p>
+
+  <div class="dos">
+    <div class="mini">
+      <h4>Los cinco bloqueos, en este orden</h4>
+      <ul style="margin:0">
+        <li>No sabe qué equipo necesita — ni el técnico ni el de personas</li>
+        <li>Cree que es caro</li>
+        <li>No sabe grabar ni editar</li>
+        <li>No entiende YouTube</li>
+        <li><b>Y debajo de los cuatro: le da miedo</b></li>
+      </ul>
+    </div>
+    <div class="mini">
+      <h4>Sus frases, literales</h4>
+      <ul style="margin:0">
+        <li>«No le entiendo a YouTube»</li>
+        <li>«No sé cómo empezar mi podcast»</li>
+        <li>«No sé qué equipo necesito para grabar, ni el técnico ni el de personas»</li>
+        <li>Y el miedo al formato largo: media hora le parece muchísimo</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="cita" style="margin-top:14px">El miedo va siempre el último. Es el único que nadie dice
+  en voz alta, y solo se puede oír después de nombrar los cuatro técnicos.</p>
+</div>
+
+<!-- ══════════ PODCAST MASTER ══════════ -->
+<h2 id="master">2 · La membresía</h2>
+
+<div class="card prod">
+  <div class="prod-h">
+    <span class="nom">Podcast Master</span>
+    <span class="precio">127 USD/mes · 1.270/año</span>
+    <span class="escalon">Peldaño 2</span>
+  </div>
+  <p class="baja">Membresía en Skool, con tier gratuito y tier premium</p>
+
+  <table>
+    <tr><td>Curso</td><td><b>4 rutas · 36 clases pregrabadas.</b> Al entrar, un diagnóstico coloca al alumno en su ruta</td></tr>
+    <tr><td>En vivo</td><td><b>10 sesiones al mes</b> — martes, miércoles y jueves alternos</td></tr>
+    <tr><td>Validación</td><td><b>Un post de evidencia por ruta.</b> Sin post no se avanza</td></tr>
+    <tr><td>Imparten</td><td>Gio (17 clases) · Becky (14) · Saul (6)</td></tr>
+    <tr><td>El anual</td><td><b>Son 10 meses justos:</b> «pagas diez, tienes doce»</td></tr>
+  </table>
+
+  <h3>Las cuatro rutas</h3>
+  <table>
+    <tr><th>Ruta</th><th>Para quién</th><th>Cambio</th><th>Termina con</th></tr>
+    <tr><td><b>1 · Fundamentos</b></td><td>Empieza desde cero</td><td><b>Publicar</b></td><td>1 episodio en YouTube y Spotify + 3 clips</td></tr>
+    <tr><td><b>2 · Sistema</b></td><td>Ya empezó, es inconsistente</td><td><b>Sostener</b></td><td>4 episodios seguidos + 12 clips + sistema documentado</td></tr>
+    <tr><td><b>3 · Crecimiento</b></td><td>Ya publica, está estancado</td><td><b>Criterio</b></td><td>Un A/B test + 5 clips por encima de su promedio</td></tr>
+    <tr><td><b>4 · Activo</b></td><td>Quiere monetizar</td><td><b>Capitalizar</b></td><td>Media kit + oferta + propuesta enviada</td></tr>
+  </table>
+
+  <h3>Los dos tiers</h3>
+  <table>
+    <tr><th></th><th>Gratuito</th><th>Premium</th></tr>
+    <tr><td><b>Análisis de canal</b> · martes, semanal</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Curso pregrabado</td><td>—</td><td>✅</td></tr>
+    <tr><td><b>Clase de Contenido</b> · miércoles, semanal <i>(alterna largo y corto)</i></td><td>—</td><td>✅</td></tr>
+    <tr><td><b>Workshops</b> · jueves, cada 15 días</td><td>—</td><td>✅ incluidos</td></tr>
+  </table>
+  <p><b>Al tier gratuito se entra pagando</b> la clase de 27 o cualquier workshop de 67. Y en el
+  análisis de los martes <b>se analiza el canal de un miembro premium</b>: el que no paga ve, con
+  nombre y apellido de otro, cómo es recibir el producto.</p>
+  <p>Es <b>feedback sobre lo público</b> —títulos, miniaturas, estructura, frecuencia—, no una
+  auditoría. Se pregunta en la clase quién quiere que le analicen el suyo la semana siguiente.</p>
+
+  <h3>Los workshops</h3>
+  <table>
+    <tr><td>Precio</td><td><b>67 USD sueltos</b>, incluidos en la membresía</td></tr>
+    <tr><td>Cadencia</td><td><b>Dos al mes, siempre.</b> Con los temas de los tres meses siguientes anunciados</td></tr>
+    <tr><td>Dónde se venden</td><td>En Skool, cada uno como un curso aparte. Y también por fuera</td></tr>
+    <tr><td>Quien compra uno</td><td>Entra al tier gratuito</td></tr>
+  </table>
+  <p class="cita">Dos workshops sueltos son 134. La membresía entera cuesta 127. Con el segundo del
+  mes, la membresía ya salió gratis.</p>
+</div>
+
+<!-- ══════════ EMBUDO ══════════ -->
+<h2 id="embudo">3 · Cómo encaja todo</h2>
+
+<div class="card">
+<div class="flujo">Lanza tu Podcast   <b>27 USD</b> ─┐
+                            ├─▶  <b>TIER GRATUITO</b>  ──▶  <b>Podcast Master</b>  ──▶  MCI
+Workshop suelto    <b>67 USD</b> ─┘   análisis, martes      127/mes · 1.270/año     8.000</div>
+  <p style="margin-top:16px"><b>Dos puertas de pago que desembocan en la misma sala</b>, y en esa
+  sala se vende el premium enseñando cada martes cómo es recibirlo.</p>
+  <p><b>La clase enseña lo básico; el curso es otra profundidad.</b> Los temas se repiten a
+  propósito — es el mismo patrón que el curso usa dentro de sí: <i>Setup Realista</i> en la Ruta 1,
+  <i>Setup Avanzado</i> en la Ruta 3.</p>
+  <p><b>Y no compite con nada del catálogo de Sinergéticos</b>, porque segmenta por <b>intención</b>
+  —¿vas a hacer un podcast?— y no por etapa de negocio, que es como segmenta todo lo demás.</p>
+</div>
+
+<!-- ══════════ CIFRAS ══════════ -->
+<h2 id="cifras">4 · Cifras que se pueden usar</h2>
+
+<div class="card">
+  <p class="cita">Siempre como resultado de Sinergéticos, <b>nunca como promesa al alumno.</b>
+  «Nosotros hacemos esto. Esto es lo que nos regresa» — jamás «esto es lo que vas a conseguir tú».</p>
+  <table>
+    <tr><td>Posición</td><td><b>Podcast de negocios nº 1 en México, según Spotify</b> — la más fuerte, porque tiene fuente</td></tr>
+    <tr><td>Episodios</td><td><b>+500</b></td></tr>
+    <tr><td>Suscriptores</td><td><b>1,8 millones</b> en YouTube <i>(el VSL grabado dice 1.2M: es de hace meses)</i></td></tr>
+    <tr><td>Reseñas</td><td><b>+125.000</b> de cinco estrellas</td></tr>
+    <tr><td>Descargas</td><td><b>+4 millones</b> en Spotify</td></tr>
+    <tr><td>Red</td><td><b>+18 millones</b> de seguidores en todas las cuentas</td></tr>
+    <tr><td>Equipo</td><td><b>+20 personas</b> en el proyecto</td></tr>
+    <tr><td>Origen</td><td><b>28 de junio de 2021</b>, set improvisado en el despacho de Jorge Serratos</td></tr>
+    <tr><td>Años</td><td><b>Casi seis grabando contenido con Jorge</b>; el podcast desde 2021</td></tr>
+    <tr><td>Referentes asesorados</td><td>Margarita Pasos · César Lozano · Ismael Cala · Vilma Núñez · Nayo Escobar · Daniel Marcos y más <i>(confirmar permiso antes de usarlos en pauta)</i></td></tr>
+  </table>
+  <div class="hueco">[ ] La monetización mensual no está resuelta: 50.000 o 80.000 USD. No usarla
+  hasta decidirlo.</div>
+</div>
+
+<!-- ══════════ OBJECIONES ══════════ -->
+<h2 id="objeciones">5 · Objeciones con respuesta oficial</h2>
+
+<div class="card">
+  <h3 style="margin-top:0">«No tengo equipo»</h3>
+  <p class="cita">Todo lo puedes hacer tú apoyándote de la IA.</p>
+  <h3>«No le entiendo a YouTube»</h3>
+  <p class="cita">Te falta conocer la estrategia.</p>
+  <h3>«No tengo invitados»</h3>
+  <p class="cita">Necesitas temas interesantes y preguntas estratégicas más que invitados estelares.</p>
+  <h3>«¿No es mejor contratar a alguien?»</h3>
+  <p><i>Sin aprobar.</i> La dirección: <b>aprender a hacerlo no te ahorra contratar; te permite
+  dirigir a quien contrates.</b></p>
+</div>
+
+<!-- ══════════ LENGUAJE ══════════ -->
+<h2 id="lenguaje">6 · Cómo se habla</h2>
+
+<div class="card">
+  <div class="dos">
+    <div class="mini si">
+      <h4>Frases que se repiten y funcionan</h4>
+      <ul style="margin:0">
+        <li><b>El 80 % de los podcasts nuevos muere antes del episodio 5</b>, no por talento sino por falta de estrategia y sistema</li>
+        <li><b>Cinco episodios del mismo tema clasifican un canal nuevo.</b> Con uno, la plataforma no tiene con qué</li>
+        <li>La consistencia estratégica vence al talento</li>
+        <li>Un podcast es una máquina de posicionamiento</li>
+        <li>El título es una promesa, no un resumen</li>
+        <li>El clip no resume: interrumpe</li>
+        <li>Empezamos sin estudio, sin equipo y sin seguidores</li>
+      </ul>
+    </div>
+    <div class="mini no">
+      <h4>Lo único que no se dice</h4>
+      <p style="margin:0 0 10px;font-size:.88rem"><b>Ninguna palabra está prohibida</b> — el veto
+      se levantó el 2026-08-30 (Gio). «Viral», «secreto» o «hack» se pueden usar.</p>
+      <p style="margin:0 0 10px;font-size:.88rem">Lo que sigue en pie es una sola regla, y es de
+      fondo, no de vocabulario:</p>
+      <p style="margin:12px 0 0;font-size:.88rem">No se prometen resultados que el alumno no
+      controla: <b>audiencia, vistas o ingresos</b>. Se promete el trabajo hecho.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ HUECOS ══════════ -->
+<h2 id="huecos">7 · Lo que todavía no está cerrado</h2>
+
+<div class="card">
+  <p><b>No escribas guiones apoyados en esto</b>, porque puede cambiar.</p>
+  <ul>
+    <li><b>La duración de la clase</b> — 3 horas o 2 h 30</li>
+    <li><b>Las tres plantillas y el prompt</b> de títulos y miniaturas: se prometen y no existen</li>
+    <li><b>El diagnóstico inicial</b> de la membresía: está prometido en el VSL y no existe</li>
+    <li><b>Los nombres y fechas de los workshops</b></li>
+    <li><b>La monetización mensual</b>: 50.000 o 80.000 USD</li>
+    <li><b>La fuente del 80 %</b> y la del mecanismo de clasificación de cuentas nuevas</li>
+    <li><b>El checkout y el VSL</b> de la clase</li>
+    <li><b>Permiso para nombrar a los referentes asesorados</b> en piezas con pauta</li>
+  </ul>
+</div>
+
+<footer>
+  <div>Sinergéticos · 2026-08-29 · Los documentos vivos están en <code>podcast-master/</code>.
+  Si algo de aquí cambia, cambia primero allí.</div>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20 reels — Gio Sinergéticos</title>
+<meta name="theme-color" content="#090E1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23090E1A'/%3E%3Crect x='12' y='6' width='8' height='13' rx='4' fill='%23FFC83D'/%3E%3Cpath d='M9 15a7 7 0 0 0 14 0' stroke='%23FF6B00' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M16 22v4' stroke='%23FF6B00' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   20 REELS · GIO SINERGÉTICOS — guion de rodaje
+   Documento de trabajo. Misma paleta que la landing.
+   El gancho va en dorado porque es lo que hay que clavar.
+   ========================================================== */
+:root{
+  --bg:#090E1A; --bg-2:#111827; --panel:#1E293B;
+  --line:rgba(248,250,252,.09); --line-2:rgba(248,250,252,.18);
+  --txt:#F8FAFC; --txt-2:#A1AAB8; --txt-3:#78828F;
+  --cta:#FF6B00; --oro:#FFC83D; --ok:#34D399;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+/* cabecera */
+header{border-bottom:1px solid var(--line);background:rgba(9,14,26,.94);position:sticky;top:0;z-index:20;
+  backdrop-filter:blur(10px);padding:16px 0}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+h1{font-family:'Space Grotesk',monospace;font-size:1.15rem;font-weight:700;letter-spacing:-.03em;margin:0;line-height:1.2}
+h1 span{display:block;font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);margin-top:3px}
+.tools{display:flex;align-items:center;gap:12px}
+.cont{font-family:'Space Grotesk',monospace;font-size:.8rem;font-weight:700;color:var(--txt-2);
+  border:1px solid var(--line-2);padding:7px 13px;border-radius:100px;white-space:nowrap}
+.cont b{color:var(--oro)}
+button.tool{background:rgba(248,250,252,.05);border:1px solid var(--line-2);color:var(--txt-2);
+  font:600 .78rem/1 'Inter',sans-serif;padding:9px 14px;border-radius:100px;cursor:pointer}
+button.tool:hover{color:var(--txt);border-color:var(--txt-3)}
+
+/* navegación de bloques */
+nav{display:flex;gap:8px;flex-wrap:wrap;padding:14px 0 0}
+nav a{font-size:.76rem;font-weight:700;color:var(--txt-2);text-decoration:none;
+  border:1px solid var(--line);background:rgba(248,250,252,.03);padding:7px 13px;border-radius:100px}
+nav a:hover{color:var(--txt);border-color:var(--line-2)}
+
+/* intro */
+.intro{padding:30px 0 6px}
+.intro p{color:var(--txt-2);margin:0 0 10px}
+.intro strong{color:var(--txt)}
+.aviso{border:1px dashed rgba(255,200,61,.45);background:rgba(255,200,61,.05);border-radius:12px;
+  padding:14px 18px;color:var(--oro);font-size:.88rem;font-weight:600;margin:16px 0 0;line-height:1.55}
+
+/* bloques */
+h2{font-family:'Space Grotesk',monospace;font-size:.72rem;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--txt-3);margin:40px 0 14px;padding-top:14px;border-top:1px solid var(--line)}
+
+/* tarjeta de reel */
+.reel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin-bottom:14px;
+  position:relative;transition:border-color .18s}
+.reel:hover{border-color:var(--line-2)}
+.reel.hecho{opacity:.5}
+.reel.hecho::after{content:"GRABADO";position:absolute;top:16px;right:20px;
+  font-family:'Space Grotesk',monospace;font-size:.6rem;font-weight:700;letter-spacing:.18em;
+  color:var(--cta);border:1px solid var(--cta);padding:3px 9px;border-radius:100px}
+.top-r{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.num{font-family:'Space Grotesk',monospace;font-size:1.5rem;font-weight:700;color:var(--oro);line-height:1}
+.tit{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;line-height:1.25;flex:1 1 220px}
+.dur{font-family:'Space Grotesk',monospace;font-size:.72rem;font-weight:700;color:var(--txt-3);
+  border:1px solid var(--line);padding:4px 10px;border-radius:100px;white-space:nowrap}
+.et{font-family:'Space Grotesk',monospace;font-size:.62rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--txt-3);margin:0 0 5px}
+.gancho{font-size:clamp(1.1rem,2.4vw,1.42rem);font-weight:800;letter-spacing:-.025em;line-height:1.28;
+  color:var(--oro);margin:0 0 18px}
+.cuerpo{color:var(--txt-2);margin:0 0 18px;font-size:.99rem;line-height:1.68;
+  padding:0 0 0 20px;display:grid;gap:9px}
+.cuerpo li{padding-left:4px}
+.cuerpo li::marker{color:var(--txt-3)}
+.cuerpo b{color:var(--txt)}
+.cierre{border-left:2px solid var(--cta);background:linear-gradient(90deg,rgba(255,107,0,.07),transparent);
+  padding:14px 18px;margin:0 0 16px;font-weight:700;color:var(--txt);font-size:1rem;line-height:1.45}
+.pie{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.pantalla{font-family:'Space Grotesk',monospace;font-size:.72rem;font-weight:700;letter-spacing:.08em;
+  color:var(--txt);background:rgba(248,250,252,.06);border:1px solid var(--line-2);padding:6px 12px;border-radius:6px}
+.nota{font-size:.8rem;color:var(--oro);font-weight:600}
+.marcar{margin-left:auto;background:none;border:1px solid var(--line-2);color:var(--txt-3);
+  font:600 .74rem/1 'Inter',sans-serif;padding:8px 13px;border-radius:100px;cursor:pointer}
+.marcar:hover{color:var(--txt);border-color:var(--txt-3)}
+
+footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 40px;color:var(--txt-3);font-size:.82rem}
+footer a{color:var(--txt-2)}
+
+@media(max-width:620px){
+  .reel{padding:22px 20px}
+  .head{gap:10px}
+}
+
+/* impresión: fondo blanco, una tarjeta por bloque de página */
+@media print{
+  body{background:#fff;color:#111;font-size:11pt}
+  header{position:static;background:#fff;border-color:#ccc}
+  nav,.tools,.marcar,.aviso{display:none}
+  h1,.tit,.cierre{color:#000}
+  h1 span,.num,.gancho{color:#B26A00}
+  .reel{background:#fff;border:1px solid #bbb;break-inside:avoid;page-break-inside:avoid;opacity:1}
+  .reel.hecho{opacity:1}
+  .cuerpo{color:#333}
+  .cierre{background:none;border-left:2px solid #B26A00}
+  .pantalla{background:#eee;border-color:#bbb;color:#000}
+  h2{color:#666;border-color:#ccc}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="head">
+      <h1>20 reels<span>Gio Sinergéticos</span></h1>
+      <div class="tools">
+        <span class="cont" id="cont"><b>0</b> / 20 grabados</span>
+        <button class="tool" onclick="window.print()">Imprimir</button>
+        <button class="tool" id="reset">Reiniciar</button>
+      </div>
+    </div>
+    <nav>
+      <a href="#a">A · Cómo empezar tu podcast</a>
+      <a href="#b">B · Producción: lo que sí cambia el resultado</a>
+      <a href="#c">C · Entrevistas e invitados</a>
+      <a href="#d">D · Cómo crecer: empaque y distribución</a>
+      <a href="#e">E · Métricas y sistema</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <p><strong>Un solo tema: cómo hacer un podcast.</strong> Cada reel es una mini-clase de 60 a 90
+    segundos. El gancho son los tres primeros segundos y va literal. El cuerpo puedes decirlo con
+    tus palabras, pero <strong>la enumeración se respeta</strong>: es lo que hace que se pueda
+    seguir sin verte. El cierre vuelve a ir literal.</p>
+    <p><strong>Solo el 3 y el 20 llevan CTA.</strong> Los otros dieciocho empujan a la bio sin
+    decirlo.</p>
+    <p class="aviso">[ ] Propuesta, sin aprobar. Y falta la fuente del 80 % y la del mecanismo de
+    clasificación de cuentas nuevas.</p>
+  </div>
+
+  <h2 id="a">Bloque A · Cómo empezar tu podcast</h2>
+
+  <article class="reel" data-i="1">
+    <div class="top-r"><span class="num">01</span><span class="tit">Los cuatro campos que se llenan antes de grabar nada</span><span class="dur">75 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Antes de comprar un micrófono, contesta cuatro preguntas. Si no puedes, no tienes un podcast: tienes ganas de tener uno.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Uno: <b>a quién le hablas.</b> Una persona concreta, no «emprendedores». El del negocio que factura y no duerme. Ese.</li>
+      <li>Dos: <b>qué le prometes.</b> Y una promesa es un cambio, no un tema. «Hablo de finanzas» no es promesa. «Que dejes de deberle dinero a tu propio negocio» sí.</li>
+      <li>Tres: <b>el formato.</b> Solo, entrevista o mixto. Y elige con la agenda en la mano: entrevistar es coordinar a otra persona cada semana. Si tu calendario ya está lleno, empieza solo.</li>
+      <li>Cuatro: <b>el objetivo.</b> Autoridad, clientes, red de contactos o comunidad. Y esto no es filosofía: el objetivo decide a quién invitas, qué preguntas y qué pides al final del episodio.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Con esas cuatro líneas escritas, todo lo demás —el nombre, los temas, la portada— sale casi solo. Sin ellas, cada decisión te va a costar una semana.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">1 · A QUIÉN LE HABLAS</span><span class="pantalla">2 · QUÉ LE PROMETES</span><span class="pantalla">3 · FORMATO</span><span class="pantalla">4 · OBJETIVO</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="2">
+    <div class="top-r"><span class="num">02</span><span class="tit">Cómo elegir el nombre de tu podcast</span><span class="dur">70 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">El nombre de tu podcast no es una decisión creativa. Es una decisión de posicionamiento.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Cuatro reglas, y las cuatro son verificables antes de cerrarlo.</li>
+      <li><b>Que se diga a la primera.</b> Si tienes que deletrearlo cuando alguien te pregunta cómo se llama, está muerto. Dilo en voz alta antes de escribirlo.</li>
+      <li><b>Que no te encierre.</b> Un nombre demasiado específico te obliga a cambiarlo en el episodio cuarenta, cuando ya te conocen por él.</li>
+      <li><b>Búscalo antes.</b> En YouTube, en Spotify y en Instagram. Si ya hay tres con ese nombre, vas a competir por tu propio título toda la vida.</li>
+      <li><b>Y que aguante un apodo</b>, porque la gente lo va a acortar igual, lo tengas previsto o no.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Y debajo del nombre pon una línea que diga de qué va. El nombre te identifica; la línea te vende.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">SE DICE A LA PRIMERA</span><span class="pantalla">NO TE ENCIERRA</span><span class="pantalla">BÚSCALO ANTES</span><span class="pantalla">AGUANTA UN APODO</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="3">
+    <div class="top-r"><span class="num">03</span><span class="tit">Cómo encontrar tus cinco primeros temas</span><span class="dur">85 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">No hace falta que inventes de qué hablar. Los temas no se inventan: se encuentran.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Y empieza por aquí, porque hay un motivo para que sean cinco y no uno: <b>una plataforma necesita varios contenidos del mismo tema para entender de qué va tu canal</b> y saber a quién enseñárselo. Con un episodio suelto no tiene con qué clasificarte.</li>
+      <li>Para encontrarlos, contesta tres cosas. <b>Las preguntas que ya te hacen siempre.</b> <b>Lo que tu gente busca y nadie le contesta bien.</b> Y <b>lo que sabes tú y casi nadie de tu entorno sabe.</b></li>
+      <li>De ahí salen los cinco, y los repartes así: dos de las preguntas que ya te hacen —esos son los seguros—, uno de lo que sabes y tu público no, uno con una opinión que va a contracorriente, y uno de historia propia: algo que te salió mal y qué aprendiste.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Si te saltas ese ejercicio y rellenas la lista con lo que a ti te apetece grabar, vas a salir con cinco episodios que nadie pidió.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">2 PREGUNTAS FRECUENTES</span><span class="pantalla">1 LO QUE SABES</span><span class="pantalla">1 A CONTRACORRIENTE</span><span class="pantalla">1 HISTORIA PROPIA</span><span class="nota">Lleva CTA a la bio</span><span class="nota">El del mecanismo. El más importante de los veinte</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="4">
+    <div class="top-r"><span class="num">04</span><span class="tit">La estructura de un episodio de treinta minutos</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Si te sientas a grabar treinta minutos sin estructura, vas a hacer veinte de relleno y diez buenos. Y nadie llega a los diez.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Un episodio tiene cinco partes y siempre las mismas.</li>
+      <li><b>El hook</b>, el primer minuto. No es «bienvenidos a un nuevo episodio». Es la frase más fuerte de lo que viene: adelanta el momento bueno.</li>
+      <li><b>El contexto</b>, corto. Quién eres y de qué va esto, en treinta segundos. No en cinco minutos.</li>
+      <li><b>La promesa.</b> Qué se lleva quien se quede hasta el final. Dilo explícito.</li>
+      <li><b>El desarrollo</b>, con tres a cinco temas cerrados. Cada uno con su pequeño clímax, no todo plano.</li>
+      <li><b>Y el cierre con una sola llamada a la acción.</b> Una. Si pides suscribirse, comentar, compartir y seguirte en Instagram, no van a hacer ninguna.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Escribe esas cinco partes en bullets antes de grabar. No un guion palabra por palabra: cinco líneas. Con eso ya no divagas.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">HOOK</span><span class="pantalla">CONTEXTO</span><span class="pantalla">PROMESA</span><span class="pantalla">DESARROLLO</span><span class="pantalla">CIERRE + 1 CTA</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="5">
+    <div class="top-r"><span class="num">05</span><span class="tit">Cómo grabar tu primer episodio con lo que ya tienes</span><span class="dur">85 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Nosotros empezamos el 28 de junio de 2021 en un despacho, con dos sillas y un set improvisado. Sin estudio y sin equipo profesional.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Hoy Sinergéticos es el podcast de negocios número uno de México según Spotify. Y esto es lo que necesitas para el primero.</li>
+      <li><b>Un teléfono</b>, apoyado en algo a la altura de tus ojos. Ni desde abajo ni desde arriba.</li>
+      <li><b>Una ventana delante de ti</b>, nunca detrás. La cámara expone para lo más brillante que ve: si la luz está a tu espalda, tú te conviertes en una sombra.</li>
+      <li><b>Un micrófono básico y cerca.</b> Cerca importa más que caro.</li>
+      <li><b>Una habitación con cosas blandas</b> —cortinas, sofá, ropa—, porque el eco es lo que hace que suene amateur.</li>
+      <li><b>Y un fondo ordenado</b>, que no es lo mismo que bonito.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Graba un minuto de prueba y escúchalo con auriculares antes de grabar el episodio entero. Ese minuto te va a ahorrar volver a grabarlo todo.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">TELÉFONO A LA ALTURA DE LOS OJOS</span><span class="pantalla">VENTANA DELANTE</span><span class="pantalla">MICRÓFONO CERCA</span><span class="pantalla">PRUEBA DE 1 MINUTO</span><span class="nota">Va con foto o vídeo del set de 2021</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <h2 id="b">Bloque B · Producción: lo que sí cambia el resultado</h2>
+
+  <article class="reel" data-i="6">
+    <div class="top-r"><span class="num">06</span><span class="tit">Cinco arreglos de audio que no cuestan dinero</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">La gente perdona una imagen fea. No perdona un audio malo: se va a los quince segundos y ni sabe por qué.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Cinco cosas gratis, en orden de impacto.</li>
+      <li><b>Acerca el micrófono.</b> A un palmo de la boca, ligeramente por debajo. Duplicas la calidad sin gastar nada.</li>
+      <li><b>Mata el eco.</b> Cortinas, alfombra, sofá, un armario abierto. Una habitación vacía suena a baño, y eso no se arregla después.</li>
+      <li><b>Apaga lo que zumba.</b> Aire acondicionado, nevera, ventilador. Tu oído lo ignora; el micrófono no.</li>
+      <li><b>Grábate en pistas separadas</b> si hay invitado. Si los dos van en la misma pista y uno tose, te llevas la tos de los dos.</li>
+      <li><b>Y escucha un minuto con auriculares antes de empezar.</b> No con el altavoz del portátil.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Antes de gastarte trescientos dólares en un micrófono, haz estas cinco. La mayoría de los audios malos que escucho no son de equipo barato: son de sala mala y micrófono lejos.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">MICRÓFONO CERCA</span><span class="pantalla">MATA EL ECO</span><span class="pantalla">APAGA LO QUE ZUMBA</span><span class="pantalla">PISTAS SEPARADAS</span><span class="pantalla">ESCUCHA ANTES</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="7">
+    <div class="top-r"><span class="num">07</span><span class="tit">Luz y encuadre: lo que sí se nota</span><span class="dur">70 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">No necesitas comprar luces. Necesitas dejar de cometer tres errores.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>Uno: la ventana va delante, no detrás.</b> Si la tienes a tu espalda ya perdiste, y girar la silla es gratis.</li>
+      <li><b>Dos: la cámara a la altura de tus ojos.</b> Desde abajo se te ve el techo y la papada; desde arriba pareces pequeño. Sube el teléfono con libros hasta que la lente quede a tu altura.</li>
+      <li><b>Tres: deja aire, pero poco.</b> Un puño por encima de la cabeza. Ni pegado al borde superior ni con medio metro de pared vacía.</li>
+      <li><b>Y mira a la lente</b>, no a tu propia imagen en la pantalla. Es lo que hace que quien te ve sienta que le hablas a él.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Con esas cuatro y una ventana ya estás por encima de la mitad de los podcasts que se publican esta semana.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">VENTANA DELANTE</span><span class="pantalla">LENTE A LA ALTURA DE LOS OJOS</span><span class="pantalla">UN PUÑO DE AIRE</span><span class="pantalla">MIRA A LA LENTE</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="8">
+    <div class="top-r"><span class="num">08</span><span class="tit">Editar un podcast son cuatro decisiones</span><span class="dur">75 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Editar un podcast no es un oficio. Son cuatro decisiones, y siempre las mismas.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>Una: corta el arranque muerto.</b> Los primeros treinta segundos donde te acomodas y dices «bueno, pues nada». Fuera. Empieza por la frase fuerte.</li>
+      <li><b>Dos: quita los silencios largos y las repeticiones.</b> No todos los «eh»: los silencios de más de dos segundos y las veces que empiezas la misma frase tres veces.</li>
+      <li><b>Tres: nivela el audio.</b> Que tú y el invitado suenen igual de fuerte. Si hay que subir el volumen del móvil para oír a uno, mal.</li>
+      <li><b>Y cuatro: exporta bien.</b> Un archivo para el episodio largo y los cortes verticales aparte.</li>
+      <li>Todo lo demás —transiciones, efectos, música debajo de todo— es decoración. Y la decoración no retiene a nadie.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Veinte minutos por episodio. No un diplomado de edición.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">CORTA EL ARRANQUE</span><span class="pantalla">QUITA SILENCIOS</span><span class="pantalla">NIVELA EL AUDIO</span><span class="pantalla">EXPORTA BIEN</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="9">
+    <div class="top-r"><span class="num">09</span><span class="tit">El brief: siete campos que se llenan antes de grabar</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Un episodio sin brief no es un episodio: es una conversación grabada. Y se nota.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>El brief son siete campos y se llenan en quince minutos.</li>
+      <li><b>El tema.</b> Uno, no tres.</li>
+      <li><b>El objetivo del episodio.</b> Qué quieres que pase después de escucharlo.</li>
+      <li><b>El público específico</b> de ese episodio, que no siempre es todo tu público.</li>
+      <li><b>El hook</b>, escrito. La frase con la que abres.</li>
+      <li><b>De tres a cinco puntos clave</b>, en el orden en que los vas a tocar.</li>
+      <li><b>La llamada a la acción</b>, decidida antes y no improvisada al final.</li>
+      <li><b>Y los clips que crees que van a salir.</b> Este último es el que casi nadie hace y el que más tiempo ahorra.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Decidir qué clips buscas antes de grabar cambia cómo grabas: cuando llegas al momento bueno, lo dices entero y sin interrumpir. Y luego el clip está ahí, limpio.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">TEMA</span><span class="pantalla">OBJETIVO</span><span class="pantalla">PÚBLICO</span><span class="pantalla">HOOK</span><span class="pantalla">3-5 PUNTOS</span><span class="pantalla">CTA</span><span class="pantalla">CLIPS PROBABLES</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="10">
+    <div class="top-r"><span class="num">10</span><span class="tit">La minuta: lo que apuntas mientras grabas</span><span class="dur">75 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Si terminas de grabar y no apuntaste nada, acabas de condenarte a volver a escuchar una hora entera.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>La minuta es un documento que se llena <b>durante</b> la grabación, o justo al terminar. Lleva cinco cosas.</li>
+      <li><b>Los timestamps</b> de los momentos que valen.</li>
+      <li><b>Las frases potentes</b>, transcritas tal cual. Esas son tus títulos y tus clips.</li>
+      <li><b>Los momentos clave</b>, aunque no sean frases: una pausa, una risa, una respuesta incómoda.</li>
+      <li><b>Los clips que ya viste que funcionan</b> mientras pasaban.</li>
+      <li><b>Y las llamadas a la acción</b> que mencionaste, para que el editor no las corte sin saber.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Con la minuta hecha, el editor no te pregunta nada y tú no vuelves a escuchar el episodio. Sin ella, cada episodio te cuesta una hora extra que no ves en ningún sitio.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">TIMESTAMPS</span><span class="pantalla">FRASES POTENTES</span><span class="pantalla">MOMENTOS CLAVE</span><span class="pantalla">CLIPS</span><span class="pantalla">CTAs</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <h2 id="c">Bloque C · Entrevistas e invitados</h2>
+
+  <article class="reel" data-i="11">
+    <div class="top-r"><span class="num">11</span><span class="tit">Los cinco tipos de pregunta</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Hay cinco tipos de pregunta. Con esos cinco armas cualquier entrevista, con quien sea.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>Contexto:</b> de dónde venías. Sitúa a quien escucha sin que el invitado cuente su vida.</li>
+      <li><b>Profundidad:</b> por qué. Es la pregunta que casi nadie hace y la que saca lo bueno. Cuando te den una respuesta genérica, vuelve a preguntar por qué.</li>
+      <li><b>Historia:</b> cuéntame la vez que. Las historias son lo único que la gente recuerda a la semana siguiente.</li>
+      <li><b>Contraste:</b> qué harías distinto hoy. Ahí sale el aprendizaje real, no el resumen de LinkedIn.</li>
+      <li><b>Y acción:</b> qué hago yo mañana. Es la que hace que el episodio sirva para algo.</li>
+      <li>Dos reglas encima: <b>preguntas cortas</b> —si tu pregunta dura cuarenta segundos, no es pregunta, es un discurso— y <b>ninguna que se conteste con sí o no.</b></li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Escribe diez antes de cada entrevista. Vas a usar seis, pero las diez son las que te quitan el miedo a que se haga un silencio.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">CONTEXTO</span><span class="pantalla">PROFUNDIDAD</span><span class="pantalla">HISTORIA</span><span class="pantalla">CONTRASTE</span><span class="pantalla">ACCIÓN</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="12">
+    <div class="top-r"><span class="num">12</span><span class="tit">Cómo conseguir invitados cuando no eres nadie</span><span class="dur">85 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Estás esperando a que alguien importante te diga que sí. Por eso llevas seis meses sin grabar.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Primero, la verdad incómoda: <b>necesitas temas interesantes y preguntas estratégicas mucho más que invitados estelares.</b> Un invitado normal con buenas preguntas da mejor episodio que uno famoso con preguntas de relleno.</li>
+      <li>Y cuando vayas a invitar, no busques por fama. Busca por lo que te aporta, que son cinco cosas distintas: <b>autoridad</b> —te presta credibilidad—, <b>alcance</b> —te presta audiencia—, <b>red de contactos</b> —te abre puertas—, <b>monetización</b> —te acerca a quien te va a pagar— y <b>comunidad</b> —le habla a los tuyos—.</li>
+      <li>Para el mensaje: dile <b>de qué va el episodio concreto</b>, no «me gustaría entrevistarte». Dile <b>cuánto dura</b> y <b>dónde se publica</b>. Y dile <b>qué gana él</b>, aunque sea solo el material editado para sus redes.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Y guarda esto: los primeros cinco episodios los puedes grabar tú solo. Cuando invites, ya vas con algo que enseñar, y ahí el sí es mucho más barato.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">AUTORIDAD</span><span class="pantalla">ALCANCE</span><span class="pantalla">RED DE CONTACTOS</span><span class="pantalla">MONETIZACIÓN</span><span class="pantalla">COMUNIDAD</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="13">
+    <div class="top-r"><span class="num">13</span><span class="tit">Cuatro errores que arruinan una entrevista</span><span class="dur">70 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">La entrevista no se arruina por el invitado. Se arruina por cuatro cosas que hace el que pregunta.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>Uno: preguntas kilométricas.</b> Cuando terminas de preguntar, ni tú te acuerdas de qué preguntaste. Corta la pregunta y cállate.</li>
+      <li><b>Dos: no soportar el silencio.</b> Cuando el invitado se queda pensando, ahí viene lo bueno. Si lo rellenas, te lo cargaste.</li>
+      <li><b>Tres: ir por la lista sin escuchar.</b> Si acaba de decir algo enorme y tú pasas a la pregunta cuatro porque tocaba, se nota, y quien escucha se va.</li>
+      <li><b>Y cuatro: no repreguntar.</b> La primera respuesta casi siempre es la ensayada. La segunda vez que preguntas por qué, ya es de verdad.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Tu trabajo no es hacer las diez preguntas. Es sacar los tres momentos que la gente va a repetir. Con eso ya tienes el episodio y tienes los clips.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">PREGUNTAS CORTAS</span><span class="pantalla">AGUANTA EL SILENCIO</span><span class="pantalla">ESCUCHA</span><span class="pantalla">REPREGUNTA</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <h2 id="d">Bloque D · Cómo crecer: empaque y distribución</h2>
+
+  <article class="reel" data-i="14">
+    <div class="top-r"><span class="num">14</span><span class="tit">Las cinco palancas del crecimiento</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Si tu podcast no crece, no es el algoritmo. Son cinco palancas, y seguro que estás tocando solo una.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>Planeación.</b> Saber qué vas a publicar las próximas semanas, no decidirlo el martes.</li>
+      <li><b>Empaque:</b> el título y la miniatura. Deciden si alguien abre. Puedes tener el mejor episodio del mundo y no enterarte nunca.</li>
+      <li><b>Retención.</b> Deciden si se queda. Y se diseña antes de grabar, no se arregla editando.</li>
+      <li><b>Clipeo.</b> Es lo que trae gente nueva. El episodio largo lo ve quien ya te conoce; el clip lo ve quien no.</li>
+      <li><b>Distribución.</b> Publicar no es distribuir. Publicar es subirlo; distribuir es decidir dónde aparece y cuándo, durante los días siguientes.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">La mayoría solo toca la primera y la última: graba y sube. Y luego dice que el algoritmo no le quiere.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">PLANEACIÓN</span><span class="pantalla">EMPAQUE</span><span class="pantalla">RETENCIÓN</span><span class="pantalla">CLIPEO</span><span class="pantalla">DISTRIBUCIÓN</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="15">
+    <div class="top-r"><span class="num">15</span><span class="tit">Cómo escribir el título de tu episodio</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Tu título no es un resumen de lo que pasó. Es una promesa de lo que se va a llevar quien entre.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>«Episodio 4 con Juan Pérez» no promete nada. Es un archivo, no un título.</li>
+      <li>Hay cinco ángulos y funcionan casi siempre. <b>Curiosidad:</b> abres un bucle que hay que cerrar. <b>Beneficio directo:</b> qué se lleva. <b>Tensión:</b> algo que puede salir mal. <b>Contradicción:</b> lo contrario de lo que todos dicen. <b>Y transformación:</b> de dónde a dónde.</li>
+      <li>Y el proceso importa tanto como los ángulos: <b>escribe treinta títulos.</b> No cinco, treinta. Los primeros diez son los obvios, y los obvios ya los escribió todo el mundo. <b>De los treinta te quedas con diez, de esos eliges tres, y publicas uno.</b></li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Suena a mucho trabajo para una línea. Pero esa línea decide si se ven las dos horas que grabaste. Es la hora mejor invertida de todo el proceso.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">CURIOSIDAD</span><span class="pantalla">BENEFICIO</span><span class="pantalla">TENSIÓN</span><span class="pantalla">CONTRADICCIÓN</span><span class="pantalla">TRANSFORMACIÓN</span><span class="pantalla">30 → 10 → 3 → 1</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="16">
+    <div class="top-r"><span class="num">16</span><span class="tit">Miniaturas: las reglas y la prueba</span><span class="dur">75 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Tu miniatura se va a ver del tamaño de una uña. Diséñala para ese tamaño, no para tu pantalla.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>Tres o cuatro palabras.</b> Como mucho. Si hay que leer una frase, no se lee nada.</li>
+      <li><b>Contraste alto.</b> Texto claro sobre fondo oscuro o al revés, sin grises intermedios.</li>
+      <li><b>Una cara con una emoción clara</b>, mirando a la cámara. Funciona, y lleva funcionando años.</li>
+      <li><b>Y que no repita el título.</b> El título dice una cosa, la miniatura dice otra, y juntas cuentan la historia. Si dicen lo mismo, has desperdiciado la mitad del espacio.</li>
+      <li><b>La prueba:</b> ponla en tu teléfono y aléjalo un brazo. Si no la entiendes en un segundo, no sirve.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Y si un episodio tiene pocas visitas pero buena retención, no es el episodio: es la portada. Cámbiala, espera cuarenta y ocho horas y compara.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">3-4 PALABRAS</span><span class="pantalla">CONTRASTE ALTO</span><span class="pantalla">UNA CARA</span><span class="pantalla">NO REPITAS EL TÍTULO</span><span class="pantalla">LA PRUEBA DEL BRAZO</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="17">
+    <div class="top-r"><span class="num">17</span><span class="tit">Cómo se elige un clip que funciona</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Cortar un pedazo de tu episodio no es hacer un clip. Por eso publicas cortes y no pasa nada.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>Un clip empieza en el momento de más tensión</b>, no en el contexto. Nada de «bueno, te cuento»: entra directo por la frase.</li>
+      <li><b>El primer segundo es todo.</b> Es lo que hace parar el dedo. Si tu primer segundo es una presentación, no hay clip.</li>
+      <li><b>Contexto, el mínimo imprescindible.</b> Y si el clip no se entiende sin dos frases de contexto, elige otro momento.</li>
+      <li><b>Subtítulos siempre</b>, porque se ve sin sonido.</li>
+      <li><b>Y sal del momento arriba</b>, no cuando la conversación se apaga.</li>
+      <li>Para elegirlo: <b>no busques el minuto que a ti te gustó.</b> Busca el que ya funcionó en la sala — donde el invitado cambió el tono, o donde tú te callaste.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Un buen episodio da tres clips buenos, no quince. Publica los tres y deja de rellenar.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">ENTRA POR LA TENSIÓN</span><span class="pantalla">EL PRIMER SEGUNDO</span><span class="pantalla">CONTEXTO MÍNIMO</span><span class="pantalla">SUBTÍTULOS</span><span class="pantalla">SAL ARRIBA</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="18">
+    <div class="top-r"><span class="num">18</span><span class="tit">Un episodio son veinte piezas</span><span class="dur">80 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Grabas una hora y publicas una cosa. Estás tirando el noventa por ciento del trabajo.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>De un solo episodio salen, como mínimo, veinte publicaciones.</li>
+      <li><b>Cinco clips</b> verticales, de los momentos que ya viste que funcionan.</li>
+      <li><b>Tres frases</b> para publicar como texto o como imagen. Salen de la minuta, ya transcritas.</li>
+      <li><b>Un carrusel</b> con la idea principal desglosada en pasos.</li>
+      <li><b>Una historia</b>, del detrás de cámara o de una cosa que no entró en el episodio.</li>
+      <li><b>Y un correo</b> a tu lista contando lo que aprendiste tú grabándolo.</li>
+      <li>Y esto no es publicar lo mismo cinco veces. Cada pieza le habla a alguien distinto: el clip a quien no te conoce, el carrusel a quien te sigue, el correo a quien ya confía.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">El problema nunca fue que grabes poco. Es que publicas poco de lo que ya grabaste.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">5 CLIPS</span><span class="pantalla">3 FRASES</span><span class="pantalla">1 CARRUSEL</span><span class="pantalla">1 HISTORIA</span><span class="pantalla">1 CORREO</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <h2 id="e">Bloque E · Métricas y sistema</h2>
+
+  <article class="reel" data-i="19">
+    <div class="top-r"><span class="num">19</span><span class="tit">Las tres métricas que importan</span><span class="dur">75 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Deja de mirar los «me gusta». Hay tres números que te dicen qué arreglar, y ninguno es ese.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li><b>El porcentaje de clics.</b> Cuánta gente que vio tu portada la abrió. Si es bajo, el problema es el empaque: título y miniatura. No es el contenido, porque no llegaron a verlo.</li>
+      <li><b>La retención.</b> Dónde se van. Y no mires el número final: mira <b>en qué minuto</b> cae. Si se caen en el minuto uno, tu apertura no cumple lo que prometía el título. Si se caen en el cinco, te alargaste en el contexto.</li>
+      <li><b>Y las visitas promedio</b>, no las del mejor episodio. Un episodio que explotó no te dice nada; el promedio de los últimos cinco sí.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Cada número apunta a un arreglo distinto. Por eso mirar «me gusta» no sirve: te dice que algo pasa, pero no qué tocar.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">CTR → EL EMPAQUE</span><span class="pantalla">RETENCIÓN → LA ESTRUCTURA</span><span class="pantalla">PROMEDIO → LA TENDENCIA</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <article class="reel" data-i="20">
+    <div class="top-r"><span class="num">20</span><span class="tit">El sistema de cinco capas para no abandonar</span><span class="dur">85 s</span></div>
+    <p class="et">Gancho</p>
+    <p class="gancho">Ocho de cada diez podcasts nuevos no llegan al episodio cinco. Y no es por talento: es porque dependían de tener ganas.</p>
+    <p class="et">Cuerpo</p>
+    <ul class="cuerpo">
+      <li>Un sistema de producción son cinco capas, y con las tres primeras ya no abandonas.</li>
+      <li><b>Calendario.</b> Un día fijo de grabación, en el calendario, como una reunión con un cliente. Si es «cuando pueda», es nunca.</li>
+      <li><b>Plantillas.</b> El brief y la minuta. Rellenar lleva minutos; decidir desde cero, una tarde.</li>
+      <li><b>Flujo.</b> El camino del archivo desde que grabas hasta que se publica, con nombres de carpeta siempre iguales.</li>
+      <li><b>Roles.</b> Quién hace qué, aunque al principio seas tú en tres momentos distintos de la semana.</li>
+      <li><b>Y métricas mínimas.</b> Tres números al mes, no un panel.</li>
+    </ul>
+    <p class="et">Cierre</p>
+    <p class="cierre">Cuando decidir ya está resuelto, grabar es la parte corta. Eso es todo lo que separa al que publica cuarenta episodios del que se quedó en tres.</p>
+    <p class="et">Rótulos en pantalla</p>
+    <div class="pie"><span class="pantalla">CALENDARIO</span><span class="pantalla">PLANTILLAS</span><span class="pantalla">FLUJO</span><span class="pantalla">ROLES</span><span class="pantalla">MÉTRICAS</span><span class="nota">Lleva CTA a la bio</span><button class="marcar">Marcar grabado</button></div>
+  </article>
+
+  <footer>
+    <p><strong>Si hay que empezar por tres:</strong> el 3 (por qué cinco temas y no uno), el 6 (los
+    arreglos de audio, el más aplicable) y el 15 (cómo escribir el título). Y si uno funciona muy
+    por encima del resto, ese es el ángulo de la cuenta.</p>
+    <p>Sinergéticos · 2026-08-29 · El plan de la cuenta está en <code>README.md</code></p>
+  </footer>
+
+</div>
+
+<script>
+/* Marca de grabados. Se guarda en este navegador, no sale de aquí. */
+(function(){
+  var K='reels-gio-grabados', hechos;
+  try{ hechos = new Set(JSON.parse(localStorage.getItem(K)||'[]')); }catch(e){ hechos = new Set(); }
+  var reels = [].slice.call(document.querySelectorAll('.reel'));
+  var cont = document.getElementById('cont');
+
+  function guarda(){
+    try{ localStorage.setItem(K, JSON.stringify([].concat(Array.from(hechos)))); }catch(e){}
+  }
+  function pinta(){
+    reels.forEach(function(r){
+      var on = hechos.has(r.dataset.i);
+      r.classList.toggle('hecho', on);
+      r.querySelector('.marcar').textContent = on ? 'Desmarcar' : 'Marcar grabado';
+    });
+    cont.innerHTML = '<b>' + hechos.size + '</b> / 20 grabados';
+  }
+  reels.forEach(function(r){
+    r.querySelector('.marcar').addEventListener('click', function(){
+      var i = r.dataset.i;
+      hechos.has(i) ? hechos.delete(i) : hechos.add(i);
+      guarda(); pinta();
+    });
+  });
+  document.getElementById('reset').addEventListener('click', function(){
+    hechos.clear(); guarda(); pinta();
+  });
+  pinta();
+})();
+</script>
+</body>
+</html>

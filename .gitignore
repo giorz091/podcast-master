@@ -1,0 +1,28 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Claves y secretos: nunca en el repo, van en .env fuera de git
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+
+# Dependencias
+node_modules/
+__pycache__/
+*.pyc
+venv/
+
+# Temporales
+*.log
+*.tmp
+tmp/
